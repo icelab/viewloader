@@ -36,7 +36,7 @@ function execute(views, scope, includeScope) {
       if (scopeLength) {
         Array.prototype.forEach.call(scope, checkElement.bind(this, elements));
       } else {
-        elements = scope.querySelectorAll(selector);
+        elements = [].slice.call(scope.querySelectorAll(selector));
         if (includeScope === true && matches(scope, selector)) {
           elements.push(scope);
         }
