@@ -9,7 +9,9 @@ function dasherize(s) {
 function parseProps(str) {
   var props = str;
   if (/^{/.test(str)) {
-    props = JSON.parse(str);
+    var fragment = document.createElement("div");
+    fragment.innerHTML = str;
+    props = JSON.parse(fragment.innerHTML);
   }
   return props;
 }
