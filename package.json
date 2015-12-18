@@ -9,6 +9,7 @@
     "README.md"
   ],
   "directories": {
+    "example": "examples",
     "test": "test"
   },
   "devDependencies": {
