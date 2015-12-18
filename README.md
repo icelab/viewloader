@@ -40,7 +40,8 @@ views.myLineChart = function(el, props) {
 
 viewLoader.execute(views);
 ```
-[More examples here]('https://github.com/icelab/viewloader/raw/master/examples/').
+
+[More examples here](https://github.com/icelab/viewloader/raw/master/examples/).
 
 ## API
 
