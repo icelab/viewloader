@@ -6,24 +6,46 @@ var createEl = require("./fixtures/create-element.js");
 var createNodes = require("./fixtures/create-nodes.js");
 var createDOM = require("./fixtures/create-dom.js");
 
-test("should call function when data-attribute is found", function (assert) {
-  createDOM();
-  var el = createEl("data-view-basic", "basic use", false);
-  document.appendChild(el);
+test("should call function when data-attribute is found and ...", function (nest) {
+  nest.test("... parse JSON", function (assert) {
+    createDOM();
+    var el = createEl("data-view-basic", '{"data":[1,2,3]}', false);
+    document.appendChild(el);
 
-  function myModuleFunction (el, props) {
-    var expected = "basic use";
-    assert.equal(props, expected);
-    assert.ok(el.textContent = expected);
-    assert.end();
-  }
+    function myModuleFunction (el, props) {
+      var expected = {data: [1,2,3]};
+      assert.deepEqual(props, expected);
+      assert.ok(el.textContent = expected);
+      assert.end();
+    }
 
-  var views = {};
-  views.basic = function(el, props) {
-    myModuleFunction(el, props);
-  };
+    var views = {};
+    views.basic = function(el, props) {
+      myModuleFunction(el, props);
+    };
 
-  viewLoader.execute(views);
+    viewLoader.execute(views);
+  });
+
+  nest.test("... return String", function (assert) {
+    createDOM();
+    var el = createEl("data-view-basic", "basic example", false);
+    document.appendChild(el);
+
+    function myModuleFunction (el, props) {
+      var expected = "basic example";
+      assert.equal(props, expected);
+      assert.ok(el.textContent = expected);
+      assert.end();
+    }
+
+    var views = {};
+    views.basic = function(el, props) {
+      myModuleFunction(el, props);
+    };
+
+    viewLoader.execute(views);
+  });
 });
 
 
