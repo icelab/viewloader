@@ -1,12 +1,41 @@
 {
-  "name": "viewloader-icelab",
+  "name": "viewloader",
   "description": "A tiny DOM bootstrapper",
-  "version": "1.0.1",
-  "license": "MIT",
+  "version": "1.1.0",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "faucet": "0.0.1",
+    "jsdom": "^3.1.2",
+    "tape": "^4.2.2"
+  },
+  "scripts": {
+    "test": "node test | faucet",
+    "posttest": "eslint *.js test/*.js test/**/*.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/icelab/viewloader.git"
   },
-  "files": ["index.js", "LICENSE"]
+  "bugs": {
+    "url": "https://github.com/icelab/viewloader.git"
+  },
+  "homepage": "https://github.com/icelab/viewloader.git",
+  "keywords": [
+    "browser",
+    "view",
+    "view loader",
+    "view router"
+  ],
+  "author": "Icelab <hello@icelab.com.au> (hello@icelab.com.au)",
+  "license": "MIT"
 }

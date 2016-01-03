@@ -1,3 +1,40 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var viewLoader = require('../../index.js');
+
+function myPage (el, props) {
+  console.log(el, props);
+  // ignored
+}
+
+function myArticle (el, props) {
+  console.log(el, props);
+  // div ""Scope to this article and include me""
+}
+
+function myArticleStatsChart (el, props) {
+  console.log(el, props);
+  //=> div "Some amazing JSON stats"
+}
+
+var views = {};
+
+views.page = function (el, props) {
+  myPage(el, props);
+};
+
+views.article = function (el, props) {
+  myArticle(el, props);
+};
+
+views.articleStats = function (el, props) {
+  myArticleStatsChart(el, props);
+};
+
+// scope to `data-view-article` and include the scoped element
+var scope = document.querySelector('[data-view-article]');
+viewLoader.execute(views, scope, true);
+
+},{"../../index.js":2}],2:[function(require,module,exports){
 /**
  * getElements
  * Return an array of elements, or an empty array;
@@ -130,3 +167,5 @@ function execute(views, scope, includeScope) {
 module.exports = {
   execute: execute
 }
+
+},{}]},{},[1]);
