@@ -24,7 +24,7 @@ module.exports= function myBarChart (el, props) {
 ```js
 // index.js
 
-var viewLoader = require('viewloader');
+var viewloader = require('viewloader');
 var myBarChart = require('./bar-chart');
 var myLineChart = require('./line-chart');
 
@@ -38,14 +38,14 @@ views.myLineChart = function(el, props) {
   myLineChart(el, props);
 };
 
-viewLoader.execute(views);
+viewloader.execute(views);
 ```
 
 [More examples here](https://github.com/icelab/viewloader/raw/master/examples/).
 
 ## API
 
-### viewLoader.execute(views, scope, includeScope);
+### viewloader.execute(views, scope, includeScope);
 
   * **views**: An `object` of view functions mapped to `data-view-[name]` attributes. (Required)
   * **scope**: An `element` or `nodelist` to scope the view loader to. (Optional. Defaults to `document`)
