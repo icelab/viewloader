@@ -45,13 +45,9 @@ function dasherize (str) {
 
 function parseProps (value) {
   var pattern = /^{/;
-
   if (pattern.test(value)) {
-    var fragment = document.createElement("div");
-    fragment.innerHTML = value;
-    value = JSON.parse(fragment.innerHTML);
+    value = JSON.parse(value);
   }
-
   return value;
 }
 
