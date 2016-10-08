@@ -16,7 +16,7 @@ A tiny DOM bootstrapper.
 ```js
 // bar-chart.js
 
-module.exports= function myBarChart (el, props) {
+module.exports = function myBarChart (el, props) {
   console.log(el, props); //=> div {data: [1,2,3]}
 };
 ```
