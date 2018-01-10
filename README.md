@@ -62,7 +62,7 @@ manager.resetViews();
 
 ## API
 
-### viewloader.execute(views, scope, includeScope);
+### viewloader(views, scope, includeScope);
 
   * **views**: An `object` of view functions mapped to `data-view-[name]` attributes. (Required)
   * **scope**: An `element` or `nodelist` to scope the view loader to. (Optional. Defaults to `document`)
