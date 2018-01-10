@@ -1,5 +1,6 @@
 "use strict";
 
+var Promise = require("promise-polyfill");
 var test = require("tape");
 var viewloader = require("../");
 var createEl = require("./fixtures/create-element.js");
@@ -206,6 +207,29 @@ test("should call the view instance methods ...", function(nest) {
     manager.callViews();
     manager.destroyViews();
     assert.ok(manager.initializedViews.length === 0);
+    assert.end();
+  });
+
+  nest.test("... handling returned Promises", function(assert) {
+    createDOM();
+    var el = createEl("data-view-basic", "true", false);
+    document.appendChild(el);
+
+    var views = {};
+    views.basic = function() {
+      var p = new Promise(function(resolve) {
+        resolve({
+          reset: function() {
+            assert.ok(true);
+          }
+        });
+      });
+      return p;
+    };
+
+    var manager = viewloader(views);
+    manager.callViews();
+    manager.resetViews();
     assert.end();
   });
 });

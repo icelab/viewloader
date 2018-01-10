@@ -137,12 +137,20 @@ Viewloader.prototype.callViews = function() {
     }
 
     // for each value in `elements`, call `callViewFunction`
-    this.initializedViews = Array.prototype.map.call(elements, function(
-      element
-    ) {
-      return callViewFunction(_this.views[view], viewAttr, element);
-    });
+    this.initializedViews = this.initializedViews.concat(
+      Array.prototype.map.call(elements, function(element) {
+        return callViewFunction(_this.views[view], viewAttr, element);
+      })
+    );
   }
+  // Resolve any Promises returned from views
+  this.initializedViews.forEach(function(returnValue, i) {
+    if (returnValue && returnValue.then) {
+      returnValue.then(function(r) {
+        _this.initializedViews[i] = r;
+      });
+    }
+  });
 };
 
 /**
