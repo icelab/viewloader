@@ -31,4 +31,5 @@ views.articleStats = function (el, props) {
 
 // scope to all `data-view-article`
 var nodeList = document.querySelectorAll('[data-view-article]');
-viewLoader.execute(views, nodeList, true);
+var manager = viewLoader(views, nodeList, true);
+manager.callViews();

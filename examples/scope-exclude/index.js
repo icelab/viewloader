@@ -31,4 +31,5 @@ views.articleStats = function (el, props) {
 
 // scope to `data-view-article`, but exclude the scoped element
 var scope = document.querySelector('[data-view-article]');
-viewLoader.execute(views, scope, false);
+var manager = viewLoader(views, scope, false);
+manager.callViews();

@@ -24,6 +24,10 @@ To build a standalone version:
 
 module.exports = function myBarChart (el, props) {
   console.log(el, props); //=> div {data: [1,2,3]}
+  return {
+    reset: function() { ... },
+    destroy: function() { ... }
+  }
 };
 ```
 
@@ -37,17 +41,24 @@ var myLineChart = require('./line-chart');
 var views = {};
 
 views.myBarChart = function(el, props) {
-  myBarChart(el, props);
+  return myBarChart(el, props);
 };
 
 views.myLineChart = function(el, props) {
-  myLineChart(el, props);
+  return myLineChart(el, props);
 };
 
-viewloader.execute(views);
+// Create the instance
+var manager = viewloader(views);
+// Call the view functions
+manager.callViews();
+// Call the `reset` methods of each view function
+manager.resetViews();
+// Call the `destroy` methods of each view function
+manager.resetViews();
 ```
 
-[More examples here](https://github.com/icelab/viewloader/tree/master/examples).
+[More examples here](examples).
 
 ## API
 
