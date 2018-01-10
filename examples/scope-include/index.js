@@ -31,4 +31,5 @@ views.articleStats = function (el, props) {
 
 // scope to `data-view-article` and include the scoped element
 var scope = document.querySelector('[data-view-article]');
-viewLoader.execute(views, scope, true);
+var manager = viewLoader(views, scope, true);
+manager.callViews();

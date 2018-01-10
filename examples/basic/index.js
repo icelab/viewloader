@@ -6,4 +6,4 @@ views.myBarChart = function(el, props) {
   myBarChart(el, props);
 };
 
-viewLoader.execute(views);
+viewLoader(views).callViews();
