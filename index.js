@@ -160,7 +160,7 @@ Viewloader.prototype.callViews = function() {
  */
 Viewloader.prototype.resetViews = function() {
   this.initializedViews.forEach(function(view) {
-    if (view.reset) {
+    if (view != null && view.reset) {
       view.reset();
     }
   });
@@ -173,7 +173,7 @@ Viewloader.prototype.resetViews = function() {
  */
 Viewloader.prototype.destroyViews = function() {
   this.initializedViews.forEach(function(view) {
-    if (view.destroy) {
+    if (view != null && view.destroy) {
       view.destroy();
     }
   });
