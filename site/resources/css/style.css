@@ -1,0 +1,208 @@
+/* ------------------------------ */
+/*  BASIC STYLE */
+/* ------------------------------ */
+
+/* Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #111;
+  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+}
+
+main {
+  display: block;
+  /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/* ------------------------------ */
+/*  HEADER */
+/* ------------------------------ */
+
+header {
+  background-color: rgba(240, 80, 81, 0.8);
+  height: 60vh;
+}
+
+.main-header-hero {
+  color: #fff;
+  left: 15%;
+  position: absolute;
+  top: 25%;
+}
+
+.main-header-hero__title-letter {
+  font-size: 150%;
+  font-style: italic;
+}
+
+.main-header-hero__title {
+  color: #fff;
+  font-size: 300%;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  word-spacing: 4px;
+}
+
+.main-header-hero__text {
+  color: #fff;
+  font-size: 150%;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ------------------------------ */
+/*  REUSABLE CLASSES */
+/* ------------------------------ */
+
+/*  Heading */
+.heading-margin {
+  margin: 50px 0 50px 0;
+}
+
+.heading-title{
+  text-align: center;
+}
+
+.heading-title:after {
+  background-color: #f05051;
+  content: " ";
+  display: block;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 100px;
+}
+
+.sub-heading {
+  margin: 15px auto 15px auto;
+
+}
+
+/*  Paragrafs */
+.long-copy {
+text-align: justify;
+}
+
+/* Lists */
+.list-wrapper {
+  line-height: 150%;
+  margin: 0 auto;
+  text-align: justify;
+  width: 90%;
+}
+
+.list-wrapper li {
+  margin-bottom: 10px;
+}
+
+/* Wrapper */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(800px - (30px * 2));
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+  /* ------------------------------ */
+  /*  Navigation */
+  /* ------------------------------ */
+
+.main-header__nav {
+  background-color: #f96a67;
+  border-bottom: 3px solid #ffffff26;
+  padding: 25px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.main-header__nav__list {
+  float: right;
+  list-style: none;
+  margin-right: 100px;
+}
+
+.main-header__nav__list__item {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-header__nav__list__item a:link,
+.main-header__nav__list__item a:visited {
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  font-size: 90%;
+  padding: 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-bottom 0.2s;
+}
+
+.main-header__nav__list__item a:hover,
+.main-header__nav__list__item a:active {
+  border-bottom: 2px solid #fff;
+}
+
+/* ------------------------------ */
+/*  FOOTER
+/* ------------------------------ */
+
+footer {
+  background-color: #f05051;
+  font-size: 80%;
+  margin-top: 50px;
+  padding: 25px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-wrapper__logo {
+  height: 60px;
+  margin-left: 15px;
+}
+
+.footer-wrapper__paragraph {
+  color: #fff;
+  font-size: 115%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+/* ------------------------------ */
+/*  CODE FORMATTING
+/* ------------------------------ */
+
+pre {
+  background-color: #eef;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  font-size: 15px;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  /* styles to make preformatted text wrap  */
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;
+}
