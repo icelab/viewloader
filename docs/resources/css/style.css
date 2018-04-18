@@ -112,7 +112,7 @@ header {
   margin-bottom: 10px;
 }
 
-.bullet-item {
+.list-copy {
   display: list-item;
   list-style-position: inside;
   list-style-type: disc;
@@ -214,7 +214,7 @@ footer {
 /* ------------------------------ */
 
 code {
-  background-color: #e8e8e8;
+  background-color: #eef;
   border-radius: 3px;
   padding: 2px;
   margin-bottom: 5px;

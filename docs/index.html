@@ -118,27 +118,18 @@
 
         <section class="main-installation" id="installation">
 
-          <div class="main-installation__section-heading heading-margin">
+          <div class="main-installation__section heading-margin">
             <h2 class="main-installation__section heading-title">Installation<h2>
           </div>
           <div class="main-installation__list list-wrapper">
-            <ul>
-              <li>Using npm run:
-                <code class="code-prettify">% npm install --save</code>
-              </li>
-              <li>Using yarn:
-                <code class="code-prettify">% yarn add viewloader</code>
-              </li>
-              <li>Using unpkgd (we’ll need to add a built file for this):
-                <code class="code-prettify"> unpkg.com/:package@:version/:file</code>
-              </li>
-            </ul>
+            <p"long-copy">Using npm: <code class="code-prettify">% npm install --save viewloader</code></p>
+            <p"long-copy">Using yarn: <code class="code-prettify">% yarn add viewloader</code></p>
           </div>
 
         </section>
 
         <section class="main-api" id="api">
-          <div class="main-api__section-heading heading-margin">
+          <div class="main-api__section heading-margin">
             <h2 class="main_api__section heading-title">API<h2>
           </div>
 
@@ -154,7 +145,7 @@
         </section>
 
         <section class="main-examples" id="examples">
-          <div class="main-examples__section-heading heading-margin">
+          <div class="main-examples__section heading-margin">
             <h2 class="main_examples__section heading-title">Detailed Examples<h2>
           </div>
 
@@ -165,7 +156,7 @@
           <p class="long-copy">On this example we have components that change the background color of another
             element. Since color is the only thing that changes, we can send the color in as a parameter and
             use the same component multiple times. </p>
-          <p class="bullet-item">Let's create the color changer Viewloader component.</p>
+          <p class="list-copy">Let's create the color changer Viewloader component.</p>
 
           <pre class="main-examples prettyprint language-javascript">
   &lt;script&gt;
@@ -182,11 +173,11 @@
       }
     };
 
-  viewloader.execute(views);
+    viewloader.execute(views);
 
   &lt;/script&gt;</pre>
 
-          <p class="bullet-item"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
+          <p class="list-style"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
 
           <pre class="main-examples prettyprint language-html">
   &lt;div class="container"&gt;
@@ -211,7 +202,7 @@
           <p class="long-copy">With this example we will show how to scope things with Viewloader, it's very simple 😉 </p>
           <p class="long-copy">We gonna have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
 
-          <p class="bullet-item">Let's create a simple Viewloader component that is going to change the border color of our boxes.</p>
+          <p class="list-copy">Let's create a simple Viewloader component that is going to change the border color of our boxes.</p>
 
           <pre class="main-examples prettyprint language-javascript">
   &lt;script&gt;
@@ -242,7 +233,7 @@
           It is worth remembering that the false scope is the default Viewloader behavior.</p>
         <p class="long-copy">It is worth remembering that the false scope is the default Viewloader behavior.</p>
 
-        <p class="bullet-item">Last but not least, let's add the data-view attributes passing the border color.
+        <p class="list-copy">Last but not least, let's add the data-view attributes passing the border color.
           If it's gonna change or not depend on the scope you pass! Scopes are very handy and you can
           easily apply it, it's up to you now.</p>
 
