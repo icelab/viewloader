@@ -1,14 +1,15 @@
 /* Small phones to small tablet: from 481 to 767 px */
 @media only screen and (max-width: 767px) {
-
   /* Navigation */
   .main-header__nav {
-  font-size: 90%;
+    font-size: 90%;
   }
-  .main-header__nav__list {
+
+  .main-header__nav-list {
     margin-right: 80px;
   }
-  .main-header__nav__list__item {
+
+  .main-header__nav-list-item {
     margin-left: 15px;
   }
 
@@ -26,11 +27,10 @@
 
 /* Small phones: from 0 to 480 px */
 @media only screen and (max-width: 480px) {
-
   /* header  */
   .main-header-hero {
-      color: #fff;
-      left: 10%;
+    color: #fff;
+    left: 10%;
   }
   .main-header-hero__title {
     font-size: 230%;
@@ -43,10 +43,11 @@
   .main-header__nav {
     font-size: 80%;
   }
-  .main-header__nav__list {
+
+  .main-header__nav-list {
     margin-right: 10px;
   }
-  .main-header__nav__list__item {
+  .main-header__nav-list-item {
     margin-left: 15px;
   }
 
@@ -71,7 +72,8 @@
     width: 90%;
   }
 
-  .long-copy {
+  .long-copy,
+  .bullet-item {
     font-size: 80%;
   }
 
@@ -81,7 +83,7 @@
     max-width: 90%;
   }
 
-/* Footer  */
+  /* Footer  */
   .footer-wrapper__logo {
     display: none;
   }
@@ -90,5 +92,4 @@
     font-size: 85%;
     margin-top: 0;
   }
-
 }
