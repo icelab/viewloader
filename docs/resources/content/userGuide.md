@@ -157,7 +157,7 @@ if the scope gets included or not in the Viewloader execution.
 `viewloader.execute(views, scope, boolean)`
 
 
-Whit this example we will show how to scope things with Viewloader, it's very simple 😉
+With this example we will show how to scope things with Viewloader 😉
 We gonna have two boxes, a "main" box and an inner box. The inner box represents the "target" element.
 
 - Let's create a simple Viewloader component that is going to change the border color of our boxes.
@@ -196,14 +196,13 @@ Last but not least, let's add the data-view attributes passing the border color.
 
 ```html
 <div class="container">
-  <h2> Including Scope </h2>
+  <h2> Include Scope </h2>
   <div class="scope-main-box include-scope" data-view-change-border='#10BFAB'>
     <div class="scope-inner-box" data-view-change-border='#D4AE89'></div>
   </div>
 </div>
-
 <div class="container">
-  <h2> Excluding Scope </h2>
+  <h2> Exclude Scope </h2>
   <div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'>
     <div class="scope-inner-box" data-view-change-border='#D4AE89'></div>
   </div>
