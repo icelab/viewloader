@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="resources/css/style.css">
   <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
-
   <title>Viewloader</title>
 </head>
 <body>
   <header class="main-header">
     <nav class="main-header__nav">
-      <ul class="main-header__nav__list">
-        <li class="main-header__nav__list__item"><a href="#overview">Overview</a></li>
-        <li class="main-header__nav__list__item"><a href="#installation">Installation</a></li>
-        <li class="main-header__nav__list__item"><a href="#api">Api</a></li>
-        <li class="main-header__nav__list__item"><a href="#examples">Examples</a></li>
+      <ul class="main-header__nav-list">
+        <li class="main-header__nav-list-item"><a href="#overview">Overview</a></li>
+        <li class="main-header__nav-list-item"><a href="#installation">Installation</a></li>
+        <li class="main-header__nav-list-item"><a href="#api">Api</a></li>
+        <li class="main-header__nav-list-item"><a href="#examples">Examples</a></li>
       </ul>
     </nav>
     <div class="main-header-hero">
       <h1 class="main-header-hero__title"><span class="main-header-hero__title-letter">V</span>iewloader</h1>
       <h3 class="main-header-hero__text">A tiny DOM bootstrapper</h3>
+    </di>
   </header>
 
   <main class="page-content" aria-label="Content">
@@ -34,37 +34,31 @@
             <h2 class="main_overview__section heading-title">Overview<h2>
           </div>
 
-          <p class='long-copy'>Viewloader is teensy package that simplifies the process of binding DOM nodes to JavaScript functions.
+          <p class="long-copy">Viewloader is teensy package that simplifies the process of binding DOM nodes to JavaScript functions.
             It does this by creating a convention for mapping between the DOM and your JS and ensures that only
             the functions for the components in the DOM are executed.</p>
 
           <h4 class="main_overview sub-heading">Let’s create a "Hello, World!" component:</h4>
 
-          <pre class="main-overview__code-section">
+          <pre class="prettyprint language-javascript">
   // Add a `data-view-*` attribute
-
   &lt;input data-view-hello-world&gt;
 
   &lt;script&gt;
-
-  import viewloader from "viewloader";
-
-  // Create an object to hold our views
-  const views = {
-    // Create a camelCased key matching the dasherized data-view-hello-world
-    // from our HTML: data-view-hello-world -> helloWorld
-    helloWorld: (el, props) => {
-      // The DOM node is passed here as `el` so we can do stuff!
-      el.value = "Hello, World!";
+    import viewloader from "viewloader";
+    // Create an object to hold our views
+    const views = {
+      // Create a camelCased key matching the dasherized data-view-hello-world
+      // from our HTML: data-view-hello-world -> helloWorld
+      helloWorld: (el, props) => {
+        // The DOM node is passed here as `el` so we can do stuff!
+        el.value = "Hello, World!";
+      }
     }
-  }
+    // Call viewloader with our "views" object whenever the DOM is ready
+    viewloader.execute(views);
 
-  // Call viewloader with our "views" object whenever the DOM is ready
-
-  viewloader.execute(views);
-
-  &lt;/script&gt;
-          </pre>
+  &lt;/script&gt;</pre>
 
           <h4 class="main_overview sub-heading">This simple approach:</h4>
           <div class="main-overview__section_list list-wrapper">
@@ -75,50 +69,49 @@
             </ul>
           </div>
 
-          <p class='long-copy'> 💅🏽 <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
+          <p class="long-copy"> 💅🏽 <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
           will be passed to your matching JS function as a second argument.
           </p>
 
-          <pre class="main-overview__code-section ">
+          <pre class="main-overview prettyprint language-javascript">
   &lt;input data-view-hello-world="Angela Merkel"&gt;
 
   &lt;script&gt;
-  import viewloader from "viewloader";
+    import viewloader from "viewloader";
 
-  const views = {
-    helloWorld: (el, name) => {
-      // Our attribute is available here!
-      el.value = `Hello, ${name}!`;
+    const views = {
+      helloWorld: (el, name) => {
+        // Our attribute is available here!
+        el.value = `Hello, ${name}!`;
+      }
     }
-  }
 
-  viewloader.execute(views);
+    viewloader.execute(views);
 
-  &lt;/script&gt;
-          </pre>
-          <p class='long-copy'>And for additional ✨ it’ll parse JSON-encoded values from that attribute into a proper object for you: </p>
+  &lt;/script&gt;</pre>
 
-          <pre class="main-overview__code-section ">
+          <p class="long-copy">And for additional ✨ it’ll parse JSON-encoded values from that attribute into a proper object for you: </p>
+
+          <pre class="main-overview prettyprint language-javascript">
   &lt;input
     data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
 
   &lt;script&gt;
-  import viewloader from "viewloader";
+    import viewloader from "viewloader";
 
-  const views = {
-    helloWorld: (el, props) => {
-      // Our attribute is available here!
-      el.value = `${props.greeting}, ${props.name}!`;
+    const views = {
+      helloWorld: (el, props) => {
+        // Our attribute is available here!
+        el.value = `${props.greeting}, ${props.name}!`;
+      }
     }
-  }
 
-  viewloader.execute(views);
+    viewloader.execute(views);
 
-  &lt;/script&gt;
-          </pre>
+  &lt;/script&gt;</pre>
 
-          <p class='long-copy'> 💪 This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
-          <p class='long-copy'>At the end of the day Viewloader it's just <strong>plain Javascript</strong>, don't be afraid of it.
+          <p class="long-copy"> 💪 This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
+          <p class="long-copy">At the end of the day Viewloader it's just <strong>plain Javascript</strong>, don't be afraid of it.
           No restrictions on what you can do, but no checks on what you do (so be careful!).
           </p>
         </section>
@@ -130,9 +123,15 @@
           </div>
           <div class="main-installation__list list-wrapper">
             <ul>
-              <li>Using npm</li>
-              <li>Using yarn</li>
-              <li>Using unpkgd (we’ll need to add a built file for this)</li>
+              <li>Using npm run:
+                <code class="code-prettify">% npm install --save</code>
+              </li>
+              <li>Using yarn:
+                <code class="code-prettify">% yarn add viewloader</code>
+              </li>
+              <li>Using unpkgd (we’ll need to add a built file for this):
+                <code class="code-prettify"> unpkg.com/:package@:version/:file</code>
+              </li>
             </ul>
           </div>
 
@@ -156,148 +155,112 @@
 
         <section class="main-examples" id="examples">
           <div class="main-examples__section-heading heading-margin">
-            <h2 class="main_examples__section heading-title" >Examples<h2>
+            <h2 class="main_examples__section heading-title">Detailed Examples<h2>
           </div>
 
           <h4 class="main-examples sub-heading">Customization with per-instance props</h4>
 
-          <p class='long-copy'> You can customize and reuse Viewloader components by providing different
+          <p class="long-copy"> You can customize and reuse Viewloader components by providing different
             properties to each instance, through the data-view attribute.</p>
-          <p class='long-copy'>On this example we have components that change the background color of another
+          <p class="long-copy">On this example we have components that change the background color of another
             element. Since color is the only thing that changes, we can send the color in as a parameter and
             use the same component multiple times. </p>
-          <p class='long-copy'>Let's create the color changer Viewloader component.</p>
+          <p class="bullet-item">Let's create the color changer Viewloader component.</p>
 
-          <pre class="main-examples__code-section ">
-  // change-color.js
+          <pre class="main-examples prettyprint language-javascript">
+  &lt;script&gt;
+    import viewloader from "viewloader";
 
-  module.exports = function changeColor(el, color) {
-  el.style.backgroundColor = color
+    const views = {
+      changeColor: (el, color) => {
+        el.style.backgroundColor = color;
+        const container = document.body;
 
-  const container = document.querySelector('.color-box')
+        el.addEventListener("mouseover", function(e) {
+          container.style.backgroundColor = color;
+        });
+      }
+    };
 
-  el.addEventListener('mouseover', function (e) {
-    container.style.backgroundColor = color
-  })
+  viewloader.execute(views);
 
-  el.addEventListener('mouseout', function (e) {
-    container.style.backgroundColor = '#fff'
-  })
-  }
-          </pre>
+  &lt;/script&gt;</pre>
 
-          <p class='long-copy'> Now we need to setup the component. We are using the domready library to guarantee everything will be in place.</p>
+          <p class="bullet-item"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
 
-          <pre class="main-examples__code-section ">
-  // index.js
-  import domready from 'domready';
-  import viewloader from 'viewloader';
-  import changeColor from './components/change-color';
+          <pre class="main-examples prettyprint language-html">
+  &lt;div class="container"&gt;
+    &lt;div class="box box1" data-view-change-color='#5C526F'>1&lt;/div&gt;
+    &lt;div class="box box2" data-view-change-color='#7CBB97'>2&lt;/div&gt;
+    &lt;div class="box box3" data-view-change-color='#E78A37'>3&lt;/div&gt;
+    &lt;div class="box box4" data-view-change-color='#F05051'>4&lt;/div&gt;
+    &lt;div class="box box5" data-view-change-color='#5C526F'>5&lt;/div&gt;
+    &lt;div class="box box6" data-view-change-color='#E4E0C7'>6&lt;/div&gt;
+    &lt;div class="box box7" data-view-change-color='#D4AE89'>7&lt;/div&gt;
+    &lt;div class="box box8" data-view-change-color='#CD6C40'>8&lt;/div&gt;
+    &lt;div class="box box9" data-view-change-color='#414547'>9&lt;/div&gt;
+    &lt;div class="box box10" data-view-change-color='#10BFAB'>10&lt;/div&gt;
+  &lt;/div&gt;</pre>
 
-  var views = {
-  changeColor
-  }
-
-  domready(() => viewloader.execute(views))
-          </pre>
-
-          <p class='long-copy'> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
-
-          <pre class="main-examples__code-section ">
-  &lt;div class="color-box"&gt;
-  &lt;div class="box box1" data-view-change-color='#5C526F'&gt;1&lt;/div&gt;
-  &lt;div class="box box2" data-view-change-color='#7CBB97'&gt;2&lt;/div&gt;
-  &lt;div class="box box3" data-view-change-color='#E78A37'&gt;3&lt;/div&gt;
-  &lt;div class="box box4" data-view-change-color='#F05051'&gt;4&lt;/div&gt;
-  &lt;div class="box box5" data-view-change-color='#5C526F'&gt;5&lt;/div&gt;
-  &lt;div class="box box6" data-view-change-color='#E4E0C7'&gt;6&lt;/div&gt;
-  &lt;div class="box box7" data-view-change-color='#D4AE89'&gt;7&lt;/div&gt;
-  &lt;div class="box box8" data-view-change-color='#CD6C40'&gt;8&lt;/div&gt;
-  &lt;div class="box box9" data-view-change-color='#414547'&gt;9&lt;/div&gt;
-  &lt;div class="box box10" data-view-change-color='#10BFAB'&gt;10&lt;/div&gt;
-  &lt;/div&gt;
-        </pre>
-
-          <p class='long-copy'>That's it! You can see a live version of this example [ here ].</p>
+          <p class="long-copy">That's it! You can see a live version of this example [ here ].</p>
 
           <h4 class="main-examples sub-heading">Show me the scope</h4>
-          <p class='long-copy'>Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
-          <p class='long-copy'>You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
+          <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
+          <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
 
-          <p class='long-copy'>Let's create an example showing how to scope things with Viewloader, it's very simple :)</p>
-          <p class='long-copy'>We gonna have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
-          <p class='long-copy'>This Viewloader component is going to change the border color of our boxes.</p>
+          <p class="long-copy">With this example we will show how to scope things with Viewloader, it's very simple 😉 </p>
+          <p class="long-copy">We gonna have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
 
-          <pre class="main-examples__code-section ">
-    // change-border.js
-  module.exports = function changeBorder(el, borderColor) {
-  el.addEventListener('mouseover', function (e) {
-    el.style.border = `10px solid ${borderColor}`
-  })
+          <p class="bullet-item">Let's create a simple Viewloader component that is going to change the border color of our boxes.</p>
 
-  el.addEventListener('mouseout', function (e) {
-    el.style.border = '5px solid black'
-  })
-  }
-        </pre>
+          <pre class="main-examples prettyprint language-javascript">
+  &lt;script&gt;
+    import viewloader from "viewloader";
 
-        <p class='long-copy'>Now we need to setup the component and execute it, passing the scope. First we select the element to be
-          the starting point of our scope (in that case our main box) and pass it as the second argument to the Viewloader
-          execute function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
-        <p class='long-copy'>It is worth remembering that the false scope is the default Viewloader behavior.</p>
-        <pre class="main-examples__code-section ">
-  // index.js
-  import domready from 'domready';
-  import viewloader from 'viewloader';
-  import changeBorder from './components/change-border';
+    const views = {
+      changeBorder: (el, borderColor) => {
+        el.addEventListener("mouseover", function(e) {
+          el.style.borderColor = borderColor;
+        });
 
-  var views = {
-  changeBorder
-  }
+        el.addEventListener("mouseout", function(e) {
+          el.style.borderColor = "#fff";
+        });
+      }
+    };
 
-  var scope_true = document.querySelector('.scope-true')
-  var scope_false = document.querSelector('.scope-false')
+    var includeScope = document.querySelector(".include-scope");
+    var excludeScope = document.querySelector(".exclude-scope");
 
+    viewloader.execute(views, includeScope, true);
+    viewloader.execute(views, excludeScope, false);
 
-  // include the scoped element
-  domready(() => viewloader.execute(views, scope_true, true))
+  &lt;/script&gt;</pre>
 
-  //exclude the scoped element
-  domready(() => viewloader.execute(views, scope_false, false))
+        <p class="long-copy">We selected an element to be the starting point of our scope and pass it as the second argument
+          to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.
+          It is worth remembering that the false scope is the default Viewloader behavior.</p>
+        <p class="long-copy">It is worth remembering that the false scope is the default Viewloader behavior.</p>
 
-  // default false
-  domready(() => viewloader.execute(views, scope_false))
-        </pre>
-        <p class='long-copy'>Last but not least, let's add the data-view attributes passing the border color. If it's gonna change or not depend on the scope you pass!
-          Scopes are very handy and you can easily apply it, it's up to you now.</p>
+        <p class="bullet-item">Last but not least, let's add the data-view attributes passing the border color.
+          If it's gonna change or not depend on the scope you pass! Scopes are very handy and you can
+          easily apply it, it's up to you now.</p>
 
-        <pre class="main-examples__code-section ">
-  &lt;!-- index.html --&gt;
-
-  &lt;!-- First set of boxes --&gt;
-  &lt;div data-view-change-border=''>Not affected by Viewloader&lt;/div&gt;
-
-  &lt;div class="scope-main-box scope-true" data-view-change-border='#10BFAB'&gt;
-  initialized by Viewloader
-
-  &lt;div class="scope-inner-box" data-view-change-border='#F05051'&gt;
-    initialized by Viewloader
-  &lt;/div&gt;
+        <pre class="main-examples prettyprint language-html">
+  &lt;div class="container"&gt;
+    &lt;h2> Including Scope &lt;/h2&gt;
+    &lt;div class="scope-main-box include-scope" data-view-change-border='#10BFAB'&gt;
+      &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;!-- Second set of Boxes --&gt;
-  &lt;div data-view-change-border=''>Not affected by Viewloader&lt;/div&gt;
-
-  &lt;div class="scope-main-box scope-false" data-view-change-border='#10BFAB'&gt;
-  not affected by Viewloader
-
-  &lt;div class="scope-inner-box" data-view-change-border='#F05051'&gt;
-    initialized by Viewloader
-  &lt;/div&gt;
-  &lt;/div&gt;
-        </pre>
-
-        <p class='long-copy'>That's it! You can see a live version of this example here.</p>
+  &lt;div class="container"&gt;
+    &lt;h2&gt; Excluding Scope &lt;/h2&gt;
+    &lt;div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
+      &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+        <p class="long-copy">That's it! You can see a live version of this example here.</p>
         </section>
 
       </div>
@@ -312,5 +275,6 @@
     </div>
   </footer>
 
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>

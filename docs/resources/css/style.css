@@ -3,15 +3,31 @@
 /* ------------------------------ */
 
 /* Reset some basic elements */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   color: #111;
-  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   background-color: #fdfdfd;
@@ -42,11 +58,6 @@ header {
   top: 25%;
 }
 
-.main-header-hero__title-letter {
-  font-size: 150%;
-  font-style: italic;
-}
-
 .main-header-hero__title {
   color: #fff;
   font-size: 300%;
@@ -54,6 +65,11 @@ header {
   margin-bottom: 20px;
   margin-top: 0;
   word-spacing: 4px;
+}
+
+.main-header-hero__title::first-letter {
+  font-size: 150%;
+  font-style: italic;
 }
 
 .main-header-hero__text {
@@ -72,7 +88,7 @@ header {
   margin: 50px 0 50px 0;
 }
 
-.heading-title{
+.heading-title {
   text-align: center;
 }
 
@@ -88,14 +104,20 @@ header {
 
 .sub-heading {
   margin: 15px auto 15px auto;
-
 }
 
 /*  Paragrafs */
 .long-copy {
-text-align: justify;
+  text-align: justify;
+  margin-bottom: 10px;
 }
 
+.bullet-item {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: disc;
+  margin-top: 10px;
+}
 /* Lists */
 .list-wrapper {
   line-height: 150%;
@@ -118,9 +140,9 @@ text-align: justify;
   padding-right: 30px;
 }
 
-  /* ------------------------------ */
-  /*  Navigation */
-  /* ------------------------------ */
+/* ------------------------------ */
+/*  Navigation */
+/* ------------------------------ */
 
 .main-header__nav {
   background-color: #f96a67;
@@ -132,19 +154,19 @@ text-align: justify;
   z-index: 5;
 }
 
-.main-header__nav__list {
+.main-header__nav-list {
   float: right;
   list-style: none;
   margin-right: 100px;
 }
 
-.main-header__nav__list__item {
+.main-header__nav-list-item {
   display: inline-block;
   margin-left: 40px;
 }
 
-.main-header__nav__list__item a:link,
-.main-header__nav__list__item a:visited {
+.main-header__nav-list-item a:link,
+.main-header__nav-list-item a:visited {
   border-bottom: 2px solid transparent;
   color: #fff;
   font-size: 90%;
@@ -154,8 +176,8 @@ text-align: justify;
   transition: border-bottom 0.2s;
 }
 
-.main-header__nav__list__item a:hover,
-.main-header__nav__list__item a:active {
+.main-header__nav-list-item a:hover,
+.main-header__nav-list-item a:active {
   border-bottom: 2px solid #fff;
 }
 
@@ -187,22 +209,26 @@ footer {
   text-align: center;
 }
 
-
 /* ------------------------------ */
 /*  CODE FORMATTING
 /* ------------------------------ */
 
+code {
+  background-color: #e8e8e8;
+  border-radius: 3px;
+  padding: 2px;
+  margin-bottom: 5px;
+}
 pre {
   background-color: #eef;
-  border: 1px solid #e8e8e8;
   border-radius: 3px;
   font-size: 15px;
   margin: 20px auto 20px auto;
   padding: 10px;
   /* styles to make preformatted text wrap  */
-  white-space: pre-wrap;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word;
 }
