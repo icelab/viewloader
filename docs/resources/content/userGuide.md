@@ -196,13 +196,13 @@ Last but not least, let's add the data-view attributes passing the border color.
 
 ```html
 <div class="container">
-  <h2> Include Scope </h2>
+  <h2> Include scope </h2>
   <div class="scope-main-box include-scope" data-view-change-border='#10BFAB'>
     <div class="scope-inner-box" data-view-change-border='#D4AE89'></div>
   </div>
 </div>
 <div class="container">
-  <h2> Exclude Scope </h2>
+  <h2> Exclude scope </h2>
   <div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'>
     <div class="scope-inner-box" data-view-change-border='#D4AE89'></div>
   </div>
