@@ -1,16 +1,17 @@
 {
   "name": "viewloader",
   "description": "A tiny DOM bootstrapper",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "main": "index.js",
   "files": [
     "index.js",
     "LICENSE",
-    "README.md"
+    "README.md",
   ],
   "directories": {
     "example": "examples",
-    "test": "test"
+    "test": "test",
+    "dist": "dist"
   },
   "devDependencies": {
     "browserify": "^16.2.0",
