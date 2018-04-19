@@ -7,6 +7,12 @@ A tiny DOM bootstrapper.
 % npm install --save viewloader
 ```
 
+## Development
+To build a standalone version:
+```
+% npm run build
+```
+
 ## Example
 
 ```html
