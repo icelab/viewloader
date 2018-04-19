@@ -67,20 +67,9 @@
     padding-right: 15px;
   }
 
-  .list-wrapper {
-    font-size: 85%;
-    width: 90%;
-  }
-
-  .long-copy,
-  .bullet-item {
-    font-size: 80%;
-  }
-
   /* Code */
   pre {
     font-size: 75%;
-    max-width: 90%;
   }
 
   /* Footer  */

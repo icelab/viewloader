@@ -12,7 +12,7 @@
   <header class="main-header">
     <nav class="main-header__nav">
       <ul class="main-header__nav-list">
-        <li class="main-header__nav-list-item"><a href="#introduction">Overview</a></li>
+        <li class="main-header__nav-list-item"><a href="#introduction">Introduction</a></li>
         <li class="main-header__nav-list-item"><a href="#installation">Installation</a></li>
         <li class="main-header__nav-list-item"><a href="#api">Api</a></li>
         <li class="main-header__nav-list-item"><a href="#examples">Examples</a></li>
@@ -28,11 +28,7 @@
 
       <div class="wrapper">
 
-        <section class="main_introduction" id="overview">
-
-          <div class="main_introduction__section heading-margin">
-            <h2 class="main_introduction__section heading-title">Overview<h2>
-          </div>
+        <section class="main_introduction" id="introduction">
 
           <p class="long-copy">Viewloader is teensy package that simplifies the process of binding DOM nodes to JavaScript functions.
             It does this by creating a convention for mapping between the DOM and your JS and ensures that only
@@ -121,7 +117,7 @@
           <div class="main-installation__section heading-margin">
             <h2 class="main-installation__section heading-title">Installation<h2>
           </div>
-          <div class="main-installation__list list-wrapper">
+          <div class="main-installation__instructions">
             <p"long-copy">Using npm:</p>
             <pre>
   npm install --save viewloader</pre>
@@ -203,7 +199,7 @@
           <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
           <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
 
-          <p class="long-copy">With this example we will show how to scope things with Viewloader, it's very simple 😉 </p>
+          <p class="long-copy">With this example we will show how to scope things with Viewloader 😉 </p>
           <p class="long-copy">We gonna have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
 
           <p class="list-copy">Let's create a simple Viewloader component that is going to change the border color of our boxes.</p>
@@ -233,8 +229,7 @@
     &lt;/script&gt;</pre>
 
         <p class="long-copy">We selected an element to be the starting point of our scope and pass it as the second argument
-          to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.
-          It is worth remembering that the false scope is the default Viewloader behavior.</p>
+          to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
         <p class="long-copy">It is worth remembering that the false scope is the default Viewloader behavior.</p>
 
         <p class="list-copy">Last but not least, let's add the data-view attributes passing the border color.
