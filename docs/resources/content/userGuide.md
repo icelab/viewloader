@@ -84,8 +84,7 @@ No restrictions on what you can do, but no checks on what you do (so be careful!
 
 * Using yarn `yarn add viewloader`
 
-* Using unpkgd (we’ll need to add a built file for this)
- `unpkg.com/:package@:version/:file`
+* Using unpkgd `unpkg.com/viewloader@1.1.4/dist/viewloader.js`
 
 
 ### API
