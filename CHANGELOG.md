@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v1.1.5 2018-04-23
+
+### Fixed
+
+* Add --standalone flag to browserify build script. Follows UMD import pattern and makes it available in the browser.
+
 ## v1.1.4 2018-04-19
 
 ### Change
