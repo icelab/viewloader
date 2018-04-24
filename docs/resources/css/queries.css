@@ -1,12 +1,17 @@
 /* Small phones to small tablet: from 481 to 767 px */
 @media only screen and (max-width: 767px) {
   /* Navigation */
+
+.main-header-intro {
+  width: 60%;
+}
+
   .main-header__nav {
     font-size: 90%;
   }
 
   .main-header__nav-list {
-    margin-right: 80px;
+    margin-right: 50px;
   }
 
   .main-header__nav-list-item {
@@ -28,15 +33,16 @@
 /* Small phones: from 0 to 480 px */
 @media only screen and (max-width: 480px) {
   /* header  */
-  .main-header-hero {
-    color: #fff;
-    left: 10%;
+  .main-header-intro {
+    width: 85%;
   }
-  .main-header-hero__title {
-    font-size: 230%;
+
+  .main-header-intro__title {
+    font-size: 180%;
+
   }
-  .main-header-hero__text {
-    font-size: 120%;
+  .main-header-intro__sub-heading {
+    font-size: 90%;
   }
 
   /* Navigation */

@@ -26,9 +26,7 @@ figure {
 body {
   background-color: #fdfdfd;
   color: #111;
-  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-kerning: normal;
   font-feature-settings: "kern" 1;
   -webkit-text-size-adjust: 100%;
@@ -37,10 +35,6 @@ body {
   -o-font-feature-settings: "kern" 1;
 }
 
-main {
-  display: block;
-  /* Default value of `display` of `main` element is 'inline' in IE 11. */
-}
 
 /* ------------------------------ */
 /*  HEADER */
@@ -48,36 +42,37 @@ main {
 
 header {
   background-color: rgba(240, 80, 81, 0.8);
-  height: 60vh;
+  width: 100%;
 }
 
-.main-header-hero {
+.main-header-intro {
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  width: 40%;
   color: #fff;
-  left: 15%;
-  position: absolute;
-  top: 25%;
+  margin: 60px auto 0px auto;
+  padding-bottom: 60px;
 }
 
-.main-header-hero__title {
+.main-header-intro__title {
   color: #fff;
-  font-size: 300%;
+  font-size: 200%;
   letter-spacing: 1px;
   margin-bottom: 20px;
   margin-top: 0;
   word-spacing: 4px;
+  font-weight: 450;
 }
 
-.main-header-hero__title::first-letter {
-  font-size: 150%;
-  font-style: italic;
+.main-header-intro__sub-heading {
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  font-weight: normal;
 }
 
-.main-header-hero__text {
-  color: #fff;
-  font-size: 150%;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
 
 /* ------------------------------ */
 /*  REUSABLE CLASSES */
@@ -145,17 +140,15 @@ header {
 /* ------------------------------ */
 
 .main-header__nav {
-  background-color: #f96a67;
-  padding: 15px 30px;
-  top: 0;
-  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .main-header__nav a {
   text-decoration: none;
 }
 
-.header__til-text {
+.main-header__nav-til {
   margin-left: 5px;
   color: #fff;
   text-decoration: none;
@@ -183,9 +176,8 @@ header {
 .main-header__nav-list-item a:visited {
   border-bottom: 2px solid transparent;
   color: #fff;
-  font-size: 90%;
+  font-size: 100%;
   padding: 8px 0;
-  text-transform: uppercase;
   transition: border-bottom 0.2s;
 }
 
