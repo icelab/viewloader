@@ -26,13 +26,15 @@ figure {
 body {
   background-color: #fdfdfd;
   color: #111;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-kerning: normal;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-feature-settings: "kern" 1;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
+font-kerning: normal;
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern" 1;
+  -webkit-text-size-adjust: 100%;
 }
 
 .content-wrap {
@@ -52,32 +54,28 @@ header {
 
 .main-header-intro {
   -webkit-font-smoothing: antialiased;
-  text-align: center;
-  width: 60%;
   color: #fff;
   margin: 80px auto 0px auto;
   padding-bottom: 80px;
+  text-align: center;
+  width: 50%;
 }
 
 .main-header-intro__title {
   color: #fff;
   font-size: 200%;
+  font-weight: 450;
   letter-spacing: 1px;
   margin-bottom: 20px;
   margin-top: 0;
   word-spacing: 4px;
-  font-weight: 450;
 }
 
 .main-header-intro__sub-heading {
-  margin-bottom: 40px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
   font-weight: normal;
+  line-height: 1.5;
+  margin: 20px auto 40px auto;
 }
-
 
 /* ------------------------------ */
 /*  REUSABLE CLASSES */
@@ -145,8 +143,10 @@ header {
 /* ------------------------------ */
 
 .main-header__nav {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 40px;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .main-header__nav a {
@@ -154,17 +154,16 @@ header {
 }
 
 .main-header__logo-til {
-  margin-left: 5px;
   color: #fff;
+  margin-left: 5px;
   text-decoration: none;
 }
 
 .main-header__logo {
-  margin-top: -5px;
   float: left;
-  text-decoration: none;
   height: 34px;
-  margin-left: 15px;
+  margin-top: -5px;
+  text-decoration: none;
 }
 
 .main-header__nav-list {
@@ -196,7 +195,6 @@ header {
 
 .main_introduction {
   margin-top: 50px;
-
 }
 
 /* ------------------------------ */
