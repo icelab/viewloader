@@ -1,21 +1,13 @@
 /* Small phones to small tablet: from 481 to 767 px */
 @media only screen and (max-width: 767px) {
+  /* header  */
+  .main-header-intro {
+    width: 70%;
+  }
+
   /* Navigation */
-
-.main-header-intro {
-  width: 60%;
-}
-
   .main-header__nav {
     font-size: 90%;
-  }
-
-  .main-header__nav-list {
-    margin-right: 50px;
-  }
-
-  .main-header__nav-list-item {
-    margin-left: 15px;
   }
 
   /* Reausable */
@@ -39,7 +31,6 @@
 
   .main-header-intro__title {
     font-size: 180%;
-
   }
   .main-header-intro__sub-heading {
     font-size: 90%;
@@ -50,9 +41,6 @@
     font-size: 80%;
   }
 
-  .main-header__nav-list {
-    margin-right: 10px;
-  }
   .main-header__nav-list-item {
     margin-left: 15px;
   }
