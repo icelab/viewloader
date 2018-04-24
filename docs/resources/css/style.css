@@ -146,17 +146,31 @@ header {
 
 .main-header__nav {
   background-color: #f96a67;
-  border-bottom: 3px solid #ffffff26;
-  padding: 25px 0;
-  position: fixed;
+  padding: 20px 0;
   top: 0;
   width: 100%;
-  z-index: 5;
+}
+
+.main-header__nav a {
+  text-decoration: none;
+}
+
+.header__til-text {
+  margin-left: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-header__logo {
+  margin-top: -5px;
+  float: left;
+  text-decoration: none;
+  height: 34px;
+  margin-left: 15px;
 }
 
 .main-header__nav-list {
   float: right;
-  list-style: none;
   margin-right: 100px;
 }
 
@@ -171,7 +185,6 @@ header {
   color: #fff;
   font-size: 90%;
   padding: 8px 0;
-  text-decoration: none;
   text-transform: uppercase;
   transition: border-bottom 0.2s;
 }
@@ -204,11 +217,6 @@ footer {
 .footer-wrapper {
   display: flex;
   justify-content: center;
-}
-
-.footer-wrapper__logo {
-  height: 60px;
-  margin-left: 15px;
 }
 
 .footer-wrapper__paragraph {
