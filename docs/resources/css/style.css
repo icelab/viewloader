@@ -24,17 +24,17 @@ figure {
 }
 
 body {
-  background-color: #fdfdfd;
-  color: #111;
+  color: #454545;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   font-feature-settings: "kern" 1;
-font-kerning: normal;
+  font-kerning: normal;
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   -webkit-font-feature-settings: "kern" 1;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .content-wrap {
@@ -53,7 +53,6 @@ header {
 }
 
 .main-header-intro {
-  -webkit-font-smoothing: antialiased;
   color: #fff;
   margin: 80px auto 0px auto;
   padding-bottom: 80px;
@@ -132,10 +131,7 @@ header {
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  max-width: calc(900px - (30px * 2));
-  max-width: -webkit-calc(900px - (30px * 2));
-  padding-left: 30px;
-  padding-right: 30px;
+  max-width: 600px;
 }
 
 /* ------------------------------ */
@@ -202,31 +198,32 @@ header {
 /* ------------------------------ */
 
 footer {
-  background-color: #f05051;
-  font-size: 80%;
+  color: #454545;
+  font-size: 100%;
+  margin-bottom: 50px;
   margin-top: 50px;
   padding: 25px;
-}
-
-.footer-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-wrapper__paragraph {
-  color: #fff;
-  font-size: 115%;
-  margin-top: 20px;
   text-align: center;
 }
+
+footer a {
+  color: #e46b7a;
+  text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
 
 /* ------------------------------ */
 /*  CODE FORMATTING
 /* ------------------------------ */
 
 pre {
-  background-color: #eef;
-  border: 1px solid #888;
+  background-color: rgba(0,0,0,.03);
   border-radius: 3px;
   font-size: 15px;
   margin: 20px auto 20px auto;
