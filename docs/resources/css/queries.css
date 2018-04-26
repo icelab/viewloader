@@ -54,16 +54,16 @@
     margin: auto 0;
     font-size: 80;
     text-align: center;
-    width: 100%
+    width: 100%;
   }
 
   .nav-mobile_list {
-    margin: 20px 10px;
+    margin: 10px 30px 20px 30px;
     text-decoration: none;
   }
 
   .nav-mobile .list-item {
-    background: rgba(255,255,255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     margin-top: 10px;
     padding-bottom: 15px;
     padding-top: 15px;
