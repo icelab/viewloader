@@ -9,7 +9,6 @@
   .main-header__nav {
     font-size: 90%;
   }
-
   /* Reausable */
   .wrapper {
     max-width: calc(800px - (30px));
@@ -63,6 +62,7 @@
   }
 
   .nav-mobile .list-item {
+    color: #fff;
     background: rgba(255, 255, 255, 0.1);
     margin-top: 10px;
     padding-bottom: 15px;
@@ -71,7 +71,6 @@
 
   .nav-mobile .list-item a {
     text-decoration: none;
-    color: #fff;
   }
 
   .main-header-intro__sub-heading {
