@@ -15,27 +15,30 @@
     <div class="content-wrap">
 
     <nav class="main-header__nav">
-      <div class="main-header__logo">
-        <a href="https://www.icelab.com.au/" target="_blank">
-          <img class="main-header__logo" src="./resources/img/berg-300x300.png" alt="icelab_logo">
-        </a>
-        <a class="main-header__logo-til">Viewloader </a>
-      </div>
-
-
+      <a class="main-header__logo-til">Viewloader </a>
       <ul class="main-header__nav-list">
         <li class="main-header__nav-list-item"><a href="#introduction">Introduction</a></li>
         <li class="main-header__nav-list-item"><a href="#installation">Installation</a></li>
-        <li class="main-header__nav-list-item"><a href="#api">Api</a></li>
+        <li class="main-header__nav-list-item"><a href="#api">API</a></li>
         <li class="main-header__nav-list-item"><a href="#examples">Examples</a></li>
       </ul>
     </nav>
+
     <div class="main-header-intro">
       <h1 class="main-header-intro__title"> Viewloader — A tiny DOM bootstrapper</h1>
       <h3 class="main-header-intro__sub-heading">Viewloader is teensy package that simplifies the process of binding DOM nodes to JavaScript functions.
         It does this by creating a convention for mapping between the DOM and your JavaScript and ensures that only
         the functions for the components in the DOM are executed.</h3>
     </div>
+
+    <nav class="nav-mobile">
+      <ul class="nav-mobile_list">
+        <li class="nav-mobile list-item"><a href="#introduction">Introduction</a></li>
+        <li class="nav-mobile list-item"><a href="#installation">Installation</a></li>
+        <li class="nav-mobile list-item"><a href="#api">API</a></li>
+        <li class="nav-mobile list-item"><a href="#examples">Examples</a></li>
+      </ul>
+    </nav>
   </div>
 
   </header>
@@ -82,7 +85,7 @@
           is passed to your matching JavaScript function as a second argument.
           </p>
 
-          <pre class="main_introduction prettyprint language-javascript">
+          <pre class="prettyprint language-javascript">
     &lt;input data-view-hello-world="Angela Merkel"&gt;
 
     &lt;script&gt;
@@ -101,7 +104,7 @@
 
           <p class="long-copy">And for additional ✨ it parses JSON-encoded values from that attribute into a proper object for you: </p>
 
-          <pre class="main_introduction prettyprint lang-javascript">
+          <pre class="prettyprint lang-javascript">
     &lt;input
       data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
 
@@ -123,8 +126,9 @@
 
           <p>Viewloader provides freedom and flexibility to focus on encapsulating functionality within a minimal framework.</p>
           <p class="long-copy">Viewloader is <strong>plain JavaScript</strong>; it doesn't have any dependencies. </p>
-          <p data-height="500" data-theme-id="light" data-slug-hash="NMGeQz" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Hello Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/NMGeQz/">Hello Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
+          <div class="codepen-wrapper">
+            <p data-height="500" data-theme-id="light" data-slug-hash="NMGeQz" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Hello Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/NMGeQz/">Hello Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          </div>
         </section>
 
         <section class="main-installation" id="installation">
@@ -176,7 +180,7 @@
             use the same component multiple times. </p>
           <p class="list-copy">Let's create the color changer Viewloader component.</p>
 
-          <pre class="main-detailed-examples prettyprint language-javascript">
+          <pre class="prettyprint language-javascript">
     &lt;script&gt;
       import viewloader from "viewloader";
 
@@ -197,7 +201,7 @@
 
           <p class="list-style"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
 
-          <pre class="main-detailed-examples prettyprint language-html">
+          <pre class="prettyprint language-html">
     &lt;div class="container"&gt;
       &lt;div class="box box1" data-view-change-color='#5C526F'>1&lt;/div&gt;
       &lt;div class="box box2" data-view-change-color='#7CBB97'>2&lt;/div&gt;
@@ -212,9 +216,9 @@
     &lt;/div&gt;</pre>
 
           <p class="long-copy">That's it! You can see a live version of this example.</p>
-
-          <p data-height="550" data-theme-id="light" data-slug-hash="yjYZzm" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Box of colours - Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/yjYZzm/">Box of colours - Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
+          <div class="codepen-wrapper">
+            <p data-height="550" data-theme-id="light" data-slug-hash="yjYZzm" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Box of colours - Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/yjYZzm/">Box of colours - Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+          </div>
           <h4 class="main-detailed-examples sub-heading">Show me the scope</h4>
           <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
           <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
@@ -224,7 +228,7 @@
 
           <p class="list-copy">Let's create a simple Viewloader component that changes the border color of our boxes.</p>
 
-          <pre class="main-detailed-examples prettyprint language-javascript">
+          <pre class="prettyprint language-javascript">
     &lt;script&gt;
       import viewloader from "viewloader";
 
@@ -256,7 +260,7 @@
 
         <p class="list-copy">The border that changes color depends on the scope you pass; the scope option gives you flexibility in how you use each component.</p>
 
-        <pre class="main-detailed-examples prettyprint language-html">
+        <pre class="prettyprint language-html">
     &lt;div class="container"&gt;
       &lt;h2> Include scope &lt;/h2&gt;
       &lt;div class="scope-main-box include-scope" data-view-change-border='#10BFAB'&gt;
@@ -270,15 +274,21 @@
       &lt;/div&gt;
     &lt;/div&gt;</pre>
         <p class="long-copy">That's it! You can see a live version of this example here.</p>
-        <p data-height="450" data-theme-id="light" data-slug-hash="rvOoPg" data-default-tab="js,result" data-user="icelab" data-embed-version="2" data-pen-title="Scope Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/rvOoPg/">Scope Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <div class="codepen-wrapper">
+          <p data-height="450" data-theme-id="light" data-slug-hash="rvOoPg" data-default-tab="js,result" data-user="icelab" data-embed-version="2" data-pen-title="Scope Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/rvOoPg/">Scope Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </div>
         </section>
+      </pre>
 
       </div>
     </main>
 
   <footer>
-    A package made with love by Icelab.
-    <a href="https://github.com/icelab/viewloader">Source on GitHub</a>
+    <img class="footer_logo" src="./resources/img/berg-300x300.png" alt="icelab_logo">
+    <div class="footer_prhase">
+      A package made with love by <a href="https://www.icelab.com.au/" target="_blank"=>Icelab</a>.
+      <a href="https://github.com/icelab/viewloader">Source on GitHub</a>
+    </div>
   </footer>
 
   <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
