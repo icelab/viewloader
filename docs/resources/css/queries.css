@@ -25,8 +25,15 @@
 /* Small phones: from 0 to 480 px */
 @media only screen and (max-width: 480px) {
   /* header  */
+
+  .main-header {
+    margin-bottom: 50px;
+  }
+
   .main-header-intro {
-    margin-top: 40px;
+    margin-top: 0;
+    padding-top: 25px;
+    padding-bottom: 5px;
     width: 85%;
   }
 
@@ -39,20 +46,36 @@
 
   /* Navigation */
   .main-header__nav {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: inline-block;
     margin: auto 0;
     font-size: 80;
     text-align: center;
-    width: 100%;
-    padding: auto;
+    width: 100%
   }
 
-  .main-header__nav-list {
-    float:none;
+  .nav-mobile_list {
+    margin: 20px 10px;
+    text-decoration: none;
+  }
+
+  .nav-mobile .list-item {
+    background: rgba(255,255,255, 0.3);
     margin-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
   }
 
-  .main-header__nav-list-item {
-    margin-left: 5px;
+  .nav-mobile .list-item a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .main-header-intro__sub-heading {
+    margin-bottom: 0;
   }
 
   /* Reusable classes */

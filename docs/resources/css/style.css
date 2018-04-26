@@ -141,6 +141,9 @@ header {
 /* ------------------------------ */
 /*  Navigation */
 /* ------------------------------ */
+.nav-mobile {
+  display: none;
+}
 
 .main-header__nav {
   margin-left: 20px;
