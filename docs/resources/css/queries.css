@@ -26,6 +26,7 @@
 @media only screen and (max-width: 480px) {
   /* header  */
   .main-header-intro {
+    margin-top: 40px;
     width: 85%;
   }
 
@@ -38,16 +39,25 @@
 
   /* Navigation */
   .main-header__nav {
-    font-size: 80%;
+    margin: auto 0;
+    font-size: 80;
+    text-align: center;
+    width: 100%;
+    padding: auto;
+  }
+
+  .main-header__nav-list {
+    float:none;
+    margin-top: 10px;
   }
 
   .main-header__nav-list-item {
-    margin-left: 15px;
+    margin-left: 5px;
   }
 
   /* Reusable classes */
   .heading-title {
-    font-size: 120%;
+    font-size: 130%;
   }
 
   .heading-margin {
