@@ -9,6 +9,7 @@
   .main-header__nav {
     font-size: 90%;
   }
+
   /* Reausable */
   .wrapper {
     max-width: calc(800px - (30px));
@@ -23,6 +24,10 @@
 
 /* Small phones: from 0 to 480 px */
 @media only screen and (max-width: 480px) {
+
+  body {
+    font-size: 90%;
+  }
   /* header  */
 
   .main-header {
@@ -108,6 +113,10 @@
 
   .main_introduction__section__two {
     margin-top: 20px;
+  }
+
+  .icon-big {
+    font-size: 200%;
   }
 
   /* Code */
