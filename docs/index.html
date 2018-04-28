@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="vendors/css/prism.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="resources/css/style.css">
   <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
   <link href="./resources/favicon/favicon.ico" rel="icon" type="image/x-icon">
@@ -74,25 +75,24 @@
 
           <h4 class="main_introduction sub-heading">Let’s create a "Hello, World!" component:</h4>
 
-          <pre class="prettyprint lang-javascript">
-    // Add a `data-view-*` attribute
-    &lt;input data-view-hello-world&gt;
+          <pre><code class="language-html"> // Add a `data-view-*` attribute
+&lt;input data-view-hello-world&gt;
 
-    &lt;script&gt;
-      import viewloader from "viewloader";
-      // Create an object to hold our views
-      const views = {
-        // Create a camelCased key matching the dasherized data-view-hello-world
-        // from our HTML: data-view-hello-world -> helloWorld
-        helloWorld: (el, props) => {
-          // The DOM node is passed here as `el` so we can do stuff!
-          el.value = "Hello, World!";
-        }
-      }
-      // Call viewloader with our "views" object whenever the DOM is ready
-      viewloader.execute(views);
+&lt;script&gt;
+  import viewloader from "viewloader";
+  // Create an object to hold our views
+  const views = {
+    // Create a camelCased key matching the dasherized data-view-hello-world
+    // from our HTML: data-view-hello-world -> helloWorld
+    helloWorld: (el, props) => {
+      // The DOM node is passed here as `el` so we can do stuff!
+      el.value = "Hello, World!";
+    }
+  }
+  // Call viewloader with our "views" object whenever the DOM is ready
+  viewloader.execute(views);
 
-    &lt;/script&gt;</pre>
+    &lt;/script&gt;</code></pre>
 
           <h4 class="main_introduction sub-heading">This simple approach:</h4>
 
@@ -133,42 +133,39 @@
 
           </div>
 
-          <pre class="prettyprint language-javascript">
-    &lt;input data-view-hello-world="Angela Merkel"&gt;
+          <pre><code class="language-html">&lt;input data-view-hello-world="Angela Merkel"&gt;
 
-    &lt;script&gt;
-      import viewloader from "viewloader";
+&lt;script&gt;
+  import viewloader from "viewloader";
 
-      const views = {
-        helloWorld: (el, name) => {
-          // Our attribute is available here!
-          el.value = `Hello, ${name}!`;
-        }
-      }
+  const views = {
+    helloWorld: (el, name) => {
+      // Our attribute is available here!
+      el.value = `Hello, ${name}!`;
+    }
+  }
 
-      viewloader.execute(views);
+  viewloader.execute(views);
 
-    &lt;/script&gt;</pre>
+&lt;/script&gt;</code></pre>
 
           <p class="long-copy">And for additional ✨ it parses JSON-encoded values from that attribute into a proper object for you: </p>
 
-          <pre class="prettyprint lang-javascript">
-    &lt;input
-      data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
+          <pre><code class="language-html">&lt;input data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
 
-    &lt;script&gt;
-      import viewloader from "viewloader";
+&lt;script&gt;
+  import viewloader from "viewloader";
 
-      const views = {
-        helloWorld: (el, props) => {
-          // Our attribute is available here!
-          el.value = `${props.greeting}, ${props.name}!`;
-        }
-      }
+  const views = {
+    helloWorld: (el, props) => {
+      // Our attribute is available here!
+      el.value = `${props.greeting}, ${props.name}!`;
+    }
+  }
 
-      viewloader.execute(views);
+  viewloader.execute(views);
 
-    &lt;/script&gt;</pre>
+&lt;/script&gt;</code></pre>
 
           <p class="long-copy"> 💪 This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
 
@@ -186,14 +183,11 @@
           </div>
           <div class="main-installation__instructions">
             <p"long-copy">Using npm:</p>
-            <pre>
-  npm install --save viewloader</pre>
+            <pre><code class="language-markup">npm install --save viewloader</code></pre>
             <p"long-copy">Using yarn:
-            <pre>
-  yarn add viewloader</pre>
+            <pre><code class="language-markup">yarn add viewloader</code></pre>
             <p"long-copy">Using unpkg:</p>
-            <pre>
-  unpkg.com/viewloader@1.1.5/dist/viewloader.js</pre>
+            <pre><code class="language-markup">unpkg.com/viewloader@1.1.5/dist/viewloader.js</code></pre>
           </div>
 
         </section>
@@ -228,40 +222,38 @@
             use the same component multiple times. </p>
           <p class="list-copy">Let's create the color changer Viewloader component.</p>
 
-          <pre class="prettyprint language-javascript">
-    &lt;script&gt;
-      import viewloader from "viewloader";
+          <pre><code class="language-html">&lt;script&gt;
+import viewloader from "viewloader";
 
-      const views = {
-        changeColor: (el, color) => {
-          el.style.backgroundColor = color;
-          const container = document.body;
+const views = {
+  changeColor: (el, color) => {
+    el.style.backgroundColor = color;
+    const container = document.body;
 
-          el.addEventListener("mouseover", function(e) {
-            container.style.backgroundColor = color;
-          });
-        }
-      };
+    el.addEventListener("mouseover", function(e) {
+      container.style.backgroundColor = color;
+    });
+  }
+};
 
-      viewloader.execute(views);
+viewloader.execute(views);
 
-    &lt;/script&gt;</pre>
+&lt;/script&gt;</code></pre>
 
           <p class="list-style"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
 
-          <pre class="prettyprint language-html">
-    &lt;div class="container"&gt;
-      &lt;div class="box box1" data-view-change-color='#5C526F'>1&lt;/div&gt;
-      &lt;div class="box box2" data-view-change-color='#7CBB97'>2&lt;/div&gt;
-      &lt;div class="box box3" data-view-change-color='#E78A37'>3&lt;/div&gt;
-      &lt;div class="box box4" data-view-change-color='#F05051'>4&lt;/div&gt;
-      &lt;div class="box box5" data-view-change-color='#5C526F'>5&lt;/div&gt;
-      &lt;div class="box box6" data-view-change-color='#E4E0C7'>6&lt;/div&gt;
-      &lt;div class="box box7" data-view-change-color='#D4AE89'>7&lt;/div&gt;
-      &lt;div class="box box8" data-view-change-color='#CD6C40'>8&lt;/div&gt;
-      &lt;div class="box box9" data-view-change-color='#414547'>9&lt;/div&gt;
-      &lt;div class="box box10" data-view-change-color='#10BFAB'>10&lt;/div&gt;
-    &lt;/div&gt;</pre>
+          <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="box box1" data-view-change-color='#5C526F'>1&lt;/div&gt;
+  &lt;div class="box box2" data-view-change-color='#7CBB97'>2&lt;/div&gt;
+  &lt;div class="box box3" data-view-change-color='#E78A37'>3&lt;/div&gt;
+  &lt;div class="box box4" data-view-change-color='#F05051'>4&lt;/div&gt;
+  &lt;div class="box box5" data-view-change-color='#5C526F'>5&lt;/div&gt;
+  &lt;div class="box box6" data-view-change-color='#E4E0C7'>6&lt;/div&gt;
+  &lt;div class="box box7" data-view-change-color='#D4AE89'>7&lt;/div&gt;
+  &lt;div class="box box8" data-view-change-color='#CD6C40'>8&lt;/div&gt;
+  &lt;div class="box box9" data-view-change-color='#414547'>9&lt;/div&gt;
+  &lt;div class="box box10" data-view-change-color='#10BFAB'>10&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
           <p class="long-copy">That's it! You can see a live version of this example.</p>
           <div class="codepen-wrapper">
@@ -276,29 +268,28 @@
 
           <p class="list-copy">Let's create a simple Viewloader component that changes the border color of our boxes.</p>
 
-          <pre class="prettyprint language-javascript">
-    &lt;script&gt;
-      import viewloader from "viewloader";
+          <pre><code class="language-html">&lt;script&gt;
+  import viewloader from "viewloader";
 
-      const views = {
-        changeBorder: (el, borderColor) => {
-          el.addEventListener("mouseover", function(e) {
-            el.style.borderColor = borderColor;
-          });
+  const views = {
+    changeBorder: (el, borderColor) => {
+      el.addEventListener("mouseover", function(e) {
+        el.style.borderColor = borderColor;
+      });
 
-          el.addEventListener("mouseout", function(e) {
-            el.style.borderColor = "#fff";
-          });
-        }
-      };
+      el.addEventListener("mouseout", function(e) {
+        el.style.borderColor = "#fff";
+      });
+    }
+  };
 
-      var includeScope = document.querySelector(".include-scope");
-      var excludeScope = document.querySelector(".exclude-scope");
+  var includeScope = document.querySelector(".include-scope");
+  var excludeScope = document.querySelector(".exclude-scope");
 
-      viewloader.execute(views, includeScope, true);
-      viewloader.execute(views, excludeScope, false);
+  viewloader.execute(views, includeScope, true);
+  viewloader.execute(views, excludeScope, false);
 
-    &lt;/script&gt;</pre>
+&lt;/script&gt;</code></pre>
 
         <p class="long-copy">We select an element to be the starting point of our scope and pass it as the second argument
           to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
@@ -308,19 +299,19 @@
 
         <p class="list-copy">The border that changes color depends on the scope you pass; the scope option gives you flexibility in how you use each component.</p>
 
-        <pre class="prettyprint language-html">
-    &lt;div class="container"&gt;
-      &lt;h2> Include scope &lt;/h2&gt;
-      &lt;div class="scope-main-box include-scope" data-view-change-border='#10BFAB'&gt;
-        &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="container"&gt;
-      &lt;h2&gt; Exclude scope &lt;/h2&gt;
-      &lt;div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
-        &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;</pre>
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;h2> Include scope &lt;/h2&gt;
+  &lt;div class="scope-main-box include-scope" data-view-change-border='#10BFAB'&gt;
+    &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="container"&gt;
+  &lt;h2&gt; Exclude scope &lt;/h2&gt;
+  &lt;div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
+    &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
         <p class="long-copy">That's it! You can see a live version of this example here.</p>
         <div class="codepen-wrapper">
           <p data-height="450" data-theme-id="light" data-slug-hash="rvOoPg" data-default-tab="js,result" data-user="icelab" data-embed-version="2" data-pen-title="Scope Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/rvOoPg/">Scope Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -338,8 +329,7 @@
       <a href="https://github.com/icelab/viewloader">Source on GitHub</a>
     </div>
   </footer>
-
+  <script src="vendors/js/prism.js"></script>
   <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>

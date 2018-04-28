@@ -31,8 +31,8 @@
 
   .main-header-intro {
     margin-top: 0;
-    padding-top: 25px;
     padding-bottom: 5px;
+    padding-top: 25px;
     width: 85%;
   }
 
@@ -50,8 +50,8 @@
 
   .nav-mobile {
     display: inline-block;
-    margin: auto 0;
     font-size: 80;
+    margin: auto 0;
     text-align: center;
     width: 100%;
   }
@@ -62,8 +62,8 @@
   }
 
   .nav-mobile .list-item {
-    color: #fff;
     background: rgba(255, 255, 255, 0.1);
+    color: #fff;
     margin-top: 10px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -98,11 +98,12 @@
   .main_introduction__section__one {
     display: block;
   }
+
   .main_introduction__section .list_item {
-    display: flex;
     align-items: center;
-    text-align: justify;
+    display: flex;
     margin-bottom: 20px;
+    text-align: justify;
   }
 
   .main_introduction__section__two {

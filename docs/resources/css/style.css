@@ -12,7 +12,6 @@ h5,
 h6,
 p,
 blockquote,
-pre,
 hr,
 dl,
 dd,
@@ -30,7 +29,6 @@ body {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   -moz-font-feature-settings: "kern" 1;
@@ -214,7 +212,6 @@ body {
 
 .main_introduction__section__two {
   margin-top: 45px;
-  margin-bottom: 20px;
   text-align: justify;
 }
 
@@ -249,7 +246,6 @@ footer a:hover {
 .footer_logo {
   height: 34px;
   margin-bottom: 10px;
-
 }
 
 /* ------------------------------ */
@@ -259,17 +255,4 @@ footer a:hover {
 .codepen-wrapper {
   margin-bottom: 30px;
   margin-top: 30px;
-}
-
-pre {
-  background-color: rgba(0,0,0,.03);
-  border-radius: 3px;
-  font-size: 15px;
-  margin: 30px auto 30px auto;
-  /* styles to make preformatted text wrap  */
-  white-space: pre-wrap; /* css-3 */
-  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-  white-space: -pre-wrap; /* Opera 4-6 */
-  white-space: -o-pre-wrap; /* Opera 7 */
-  word-wrap: break-word;
 }
