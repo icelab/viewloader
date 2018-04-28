@@ -93,6 +93,17 @@
     padding-right: 15px;
   }
 
+  /* Sections */
+
+  .main_introduction__section__one {
+    display: block;
+  }
+  .main_introduction__section .list_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   /* Code */
   pre {
     font-size: 75%;
