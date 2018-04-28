@@ -95,17 +95,43 @@
     &lt;/script&gt;</pre>
 
           <h4 class="main_introduction sub-heading">This simple approach:</h4>
-          <div class="main_introduction__section_list list-wrapper">
-            <ul>
-              <li> 😎 Lets you stop worrying about if your JavaScript is going to be called — if there’s a <span class='dataview'>data-view-*</span> in the <strong>DOM</strong> it will be.</li>
-              <li> 🔗 Establishes a clear convention for binding JavaScript to the DOM — makes it easy to find where in your codebase behaviour is originating from.</li>
-              <li> 💊 Encourages (though doesn’t force) you to encapsulate behaviour within the context of a component’s DOM node.</li>
-            </ul>
-          </div>
 
-          <p class="long-copy"> 💅🏽 <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
-          is passed to your matching JavaScript function as a second argument.
-          </p>
+          <div class="main_introduction__section">
+
+            <div class="main_introduction__section__one">
+              <div class="main_introduction__section list_item">
+                <i class="icon-big">😎 </i>
+                <div>
+                  Lets you stop worrying about if your JavaScript is going to be called — if there’s a <span class='dataview'>data-view-*</span> in the <strong>DOM</strong> it will be.
+                </div>
+              </div>
+
+              <div class="main_introduction__section list_item">
+                <i class="icon-big"> 🔗</i>
+                <div>
+                  Establishes a clear convention for binding JavaScript to the DOM — makes it easy to find where in your codebase behaviour is originating from.
+                </div>
+              </div>
+
+              <div class="main_introduction__section list_item">
+                <i class="icon-big">💊 </i>
+                <div>
+                  Encourages (though doesn’t force) you to encapsulate behaviour within the context of a component’s DOM node.
+                </div>
+              </div>
+            </div>
+
+            <div class="main_introduction__section__two">
+              <div class="main_introduction__section last_item">
+                <i class="icon-big">💅🏽 </i>
+                <div>
+                  <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
+                  is passed to your matching JavaScript function as a second argument.
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <pre class="prettyprint language-javascript">
     &lt;input data-view-hello-world="Angela Merkel"&gt;

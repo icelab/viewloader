@@ -26,9 +26,11 @@ figure {
 body {
   font-size: 18px;
   color: #454545;
+  line-height: 1.5;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
+
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   -moz-font-feature-settings: "kern" 1;
@@ -185,6 +187,44 @@ header {
 .main-header__nav-list-item a:hover,
 .main-header__nav-list-item a:active {
   border-bottom: 2px solid #fff;
+}
+
+
+/* ------------------------------ */
+/*  SECTIONS */
+/* ------------------------------ */
+
+.icon-big {
+  margin-right: 15px;
+  font-style: normal;
+  font-size: 250%;
+  display: block;
+  text-align: center;
+}
+
+.main_introduction__section .list_item {
+  text-align: justify;
+  margin-right: 25px;
+}
+
+.list_item:last-child {
+  margin-right: 0px;
+}
+
+.main_introduction__section__one {
+  display: flex;
+}
+
+.main_introduction__section__two {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.last_item {
+  align-items: center;
+  display: flex;
+
 }
 
 /* ------------------------------ */
