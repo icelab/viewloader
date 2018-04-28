@@ -101,7 +101,12 @@
   .main_introduction__section .list_item {
     display: flex;
     align-items: center;
+    text-align: justify;
     margin-bottom: 20px;
+  }
+
+  .main_introduction__section__two {
+    margin-top: 20px;
   }
 
   /* Code */

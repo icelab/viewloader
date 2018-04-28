@@ -50,13 +50,10 @@ body {
 /*  HEADER */
 /* ------------------------------ */
 
-header {
-  background-color: rgba(240, 80, 81, 0.8);
-  width: 100%;
-}
-
 .main-header {
+  background-color: rgba(240, 80, 81, 0.8);
   margin-bottom: 100px;
+  width: 100%;
 }
 
 .main-header-intro {
@@ -203,7 +200,7 @@ header {
 }
 
 .main_introduction__section .list_item {
-  text-align: justify;
+  text-align: center;
   margin-right: 25px;
 }
 
@@ -216,15 +213,15 @@ header {
 }
 
 .main_introduction__section__two {
-  margin-top: 20px;
+  margin-top: 45px;
   margin-bottom: 20px;
   text-align: justify;
 }
 
 .last_item {
+  width: 90%;
   align-items: center;
   display: flex;
-
 }
 
 /* ------------------------------ */
