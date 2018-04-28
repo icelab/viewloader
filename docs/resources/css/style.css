@@ -107,6 +107,7 @@ body {
 
 /*  Paragrafs */
 .long-copy {
+  margin-bottom: 10px;
   text-align: justify;
 }
 
