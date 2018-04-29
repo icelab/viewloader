@@ -105,7 +105,6 @@
   }
 
   .main_introduction__section .list_item {
-    align-items: center;
     display: flex;
     margin-bottom: 20px;
     text-align: justify;
