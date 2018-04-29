@@ -67,7 +67,6 @@
   </header>
 
 
-  <main class="page-content" aria-label="Content">
 
       <div class="wrapper">
 
@@ -92,48 +91,48 @@
   // Call viewloader with our "views" object whenever the DOM is ready
   viewloader.execute(views);
 
-    &lt;/script&gt;</code></pre>
+&lt;/script&gt;</code></pre>
 
-          <h4 class="main_introduction sub-heading">This simple approach:</h4>
+        <h4 class="main_introduction sub-heading">This simple approach:</h4>
 
-          <div class="main_introduction__section">
+        <div class="main_introduction__section">
 
-            <div class="main_introduction__section__one">
-              <div class="main_introduction__section list_item">
-                <i class="icon-big">😎 </i>
-                <div>
-                  Lets you stop worrying about if your JavaScript is going to be called — if there’s a <span class='dataview'>data-view-*</span> in the <strong>DOM</strong> it will be.
-                </div>
-              </div>
-
-              <div class="main_introduction__section list_item">
-                <i class="icon-big"> 🔗</i>
-                <div>
-                  Establishes a clear convention for binding JavaScript to the DOM — makes it easy to find where in your codebase behaviour is originating from.
-                </div>
-              </div>
-
-              <div class="main_introduction__section list_item">
-                <i class="icon-big">💊 </i>
-                <div>
-                  Encourages (though doesn’t force) you to encapsulate behaviour within the context of a component’s DOM node.
-                </div>
+          <div class="main_introduction__section__one">
+            <div class="main_introduction__section list_item">
+              <i class="icon-big">😎 </i>
+              <div>
+                Lets you stop worrying about if your JavaScript is going to be called — if there’s a <span class='dataview'>data-view-*</span> in the <strong>DOM</strong> it will be.
               </div>
             </div>
 
-            <div class="main_introduction__section__two">
-              <div class="main_introduction__section last_item">
-                <i class="icon-big">💅🏽 </i>
-                <div>
-                  <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
-                  is passed to your matching JavaScript function as a second argument.
-                </div>
+            <div class="main_introduction__section list_item">
+              <i class="icon-big"> 🔗</i>
+              <div>
+                Establishes a clear convention for binding JavaScript to the DOM — makes it easy to find where in your codebase behaviour is originating from.
               </div>
             </div>
 
+            <div class="main_introduction__section list_item">
+              <i class="icon-big">💊 </i>
+              <div>
+                Encourages (though doesn’t force) you to encapsulate behaviour within the context of a component’s DOM node.
+              </div>
+            </div>
           </div>
 
-          <pre><code class="language-html">&lt;input data-view-hello-world="Angela Merkel"&gt;
+          <div class="main_introduction__section__two">
+            <div class="main_introduction__section last_item">
+              <i class="icon-big">💅🏽 </i>
+              <div>
+                <strong>Viewloader</strong> has one extra trick up its sleeve that makes it an incredibly powerful pattern: the value of the `data-view-*` attribute
+                is passed to your matching JavaScript function as a second argument.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <pre><code class="language-html">&lt;input data-view-hello-world="Angela Merkel"&gt;
 
 &lt;script&gt;
   import viewloader from "viewloader";
@@ -149,9 +148,9 @@
 
 &lt;/script&gt;</code></pre>
 
-          <p class="long-copy">And for additional ✨ it parses JSON-encoded values from that attribute into a proper object for you: </p>
+        <p class="long-copy">And for additional ✨ it parses JSON-encoded values from that attribute into a proper object for you: </p>
 
-          <pre><code class="language-html">&lt;input data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
+        <pre><code class="language-html">&lt;input data-view-hello-world='{\"greeting\":\"Guten tag",\"name\":\"Angela Merkel\"}'&gt;
 
 &lt;script&gt;
   import viewloader from "viewloader";
@@ -167,108 +166,98 @@
 
 &lt;/script&gt;</code></pre>
 
-          <p class="long-copy"> 💪 This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
+        <p class="long-copy">This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
 
-          <p  class="long-copy">Viewloader provides freedom and flexibility to focus on encapsulating functionality within a minimal framework.</p>
-          <p class="long-copy">Viewloader is <strong>plain JavaScript</strong>; it doesn't have any dependencies. </p>
-          <div class="codepen-wrapper">
-            <p data-height="500" data-theme-id="light" data-slug-hash="NMGeQz" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Hello Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/NMGeQz/">Hello Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-          </div>
-        </section>
+        <p  class="long-copy">Viewloader provides freedom and flexibility to focus on encapsulating functionality within a minimal framework.</p>
+        <p class="long-copy">Viewloader is <strong>plain JavaScript</strong>; it doesn't have any dependencies. </p>
+        <div class="codepen-wrapper">
+          <p data-height="500" data-theme-id="light" data-slug-hash="NMGeQz" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Hello Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/NMGeQz/">Hello Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </div>
+      </section>
 
-        <section class="main-installation" id="installation">
+      <section class="main-installation" id="installation">
 
-          <div class="main-installation__section heading-margin">
-            <h2 class="main-installation__section heading-title">Installation<h2>
-          </div>
-          <div class="main-installation__instructions">
-            <p>Using npm:</p>
-            <pre><code class="language-markup">npm install --save viewloader</code></pre>
-            <p>Using yarn:
-            <pre><code class="language-markup">yarn add viewloader</code></pre>
-            <p>Using unpkg:</p>
-            <pre><code class="language-markup">unpkg.com/viewloader@1.1.5/dist/viewloader.js</code></pre>
-          </div>
+        <div class="main-installation__section heading-margin">
+          <h2 class="main-installation__section heading-title">Installation<h2>
+        </div>
+        <div class="main-installation__instructions">
+          <p>Using npm:</p>
+          <pre><code class="language-markup">npm install --save viewloader</code></pre>
+          <p>Using yarn:
+          <pre><code class="language-markup">yarn add viewloader</code></pre>
+          <p>Using unpkg:</p>
+          <pre><code class="language-markup">unpkg.com/viewloader@1.1.5/dist/viewloader.js</code></pre>
+        </div>
 
-        </section>
+      </section>
 
-        <section class="main-api" id="api">
-          <div class="main-api__section heading-margin">
-            <h2 class="main_api__section heading-title">API<h2>
-          </div>
+      <section class="main-api" id="api">
+        <div class="main-api__section heading-margin">
+          <h2 class="main_api__section heading-title">API<h2>
+        </div>
+        <h4 class="main-api sub-heading">viewloader.execute(views, scope, includeScope)</h4>
+        <div class="main-api__list list-wrapper">
+          <ul>
+            <li><strong>views:</strong> An object of view functions mapped to data-view-[name] attributes. (Required)</li>
+            <li><strong>scope:</strong> An element or nodelist to scope the view loader to. (Optional. Defaults to document)</li>
+            <li><strong>includeScope:</strong> A boolean to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to false)</li>
+          </ul>
+        </div>
+      </section>
 
-          <h4 class="main-api sub-heading">viewloader.execute(views, scope, includeScope)</h4>
+      <section class="main-detailed-examples" id="examples">
+        <div class="main-detailed-examples__section heading-margin">
+          <h2 class="main-detailed-examples__section heading-title">Detailed examples<h2>
+        </div>
+        <h4 class="main-detailed-examples sub-heading">Customization with per-instance props</h4>
+        <p class="long-copy"> You can customize and reuse Viewloader components by providing different
+          properties to each instance, through the data-view attribute.</p>
+        <p class="long-copy">In this example we have components that change the background color of another
+          element. Since color is the only thing that changes, we can send the color in as a parameter and
+          use the same component multiple times. </p>
+        <p class="list-copy">Let's create the color changer Viewloader component.</p>
 
-          <div class="main-api__list list-wrapper">
-            <ul>
-              <li><strong>views:</strong> An object of view functions mapped to data-view-[name] attributes. (Required)</li>
-              <li><strong>scope:</strong> An element or nodelist to scope the view loader to. (Optional. Defaults to document)</li>
-              <li><strong>includeScope:</strong> A boolean to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to false)</li>
-            </ul>
-          </div>
-        </section>
+        <pre><code class="language-html">&lt;script&gt;
+  import viewloader from "viewloader";
 
-        <section class="main-detailed-examples" id="examples">
-          <div class="main-detailed-examples__section heading-margin">
-            <h2 class="main-detailed-examples__section heading-title">Detailed examples<h2>
-          </div>
+  const views = {
+    changeColor: (el, color) => {
+      el.style.backgroundColor = color;
+      const container = document.body;
 
-          <h4 class="main-detailed-examples sub-heading">Customization with per-instance props</h4>
+      el.addEventListener("mouseover", function(e) {
+        container.style.backgroundColor = color;
+      });
+    }
+  };
 
-          <p class="long-copy"> You can customize and reuse Viewloader components by providing different
-            properties to each instance, through the data-view attribute.</p>
-          <p class="long-copy">In this example we have components that change the background color of another
-            element. Since color is the only thing that changes, we can send the color in as a parameter and
-            use the same component multiple times. </p>
-          <p class="list-copy">Let's create the color changer Viewloader component.</p>
-
-          <pre><code class="language-html">&lt;script&gt;
-import viewloader from "viewloader";
-
-const views = {
-  changeColor: (el, color) => {
-    el.style.backgroundColor = color;
-    const container = document.body;
-
-    el.addEventListener("mouseover", function(e) {
-      container.style.backgroundColor = color;
-    });
-  }
-};
-
-viewloader.execute(views);
+  viewloader.execute(views);
 
 &lt;/script&gt;</code></pre>
 
-          <p class="list-style"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
+        <p class="list-copy"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
 
-          <pre><code class="language-html">&lt;div class="container"&gt;
-  &lt;div class="box box1" data-view-change-color='#5C526F'>1&lt;/div&gt;
-  &lt;div class="box box2" data-view-change-color='#7CBB97'>2&lt;/div&gt;
-  &lt;div class="box box3" data-view-change-color='#E78A37'>3&lt;/div&gt;
-  &lt;div class="box box4" data-view-change-color='#F05051'>4&lt;/div&gt;
-  &lt;div class="box box5" data-view-change-color='#5C526F'>5&lt;/div&gt;
-  &lt;div class="box box6" data-view-change-color='#E4E0C7'>6&lt;/div&gt;
-  &lt;div class="box box7" data-view-change-color='#D4AE89'>7&lt;/div&gt;
-  &lt;div class="box box8" data-view-change-color='#CD6C40'>8&lt;/div&gt;
-  &lt;div class="box box9" data-view-change-color='#414547'>9&lt;/div&gt;
-  &lt;div class="box box10" data-view-change-color='#10BFAB'>10&lt;/div&gt;
+        <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="box" data-view-change-color='#5C526F'>1&lt;/div&gt;
+  &lt;div class="box" data-view-change-color='#7CBB97'>2&lt;/div&gt;
+  &lt;div class="box" data-view-change-color='#E78A37'>3&lt;/div&gt;
+  &lt;div class="box" data-view-change-color='#F05051'>4&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-          <p class="long-copy">That's it! You can see a live version of this example.</p>
-          <div class="codepen-wrapper">
-            <p data-height="550" data-theme-id="light" data-slug-hash="yjYZzm" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Box of colours - Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/yjYZzm/">Box of colours - Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-          </div>
-          <h4 class="main-detailed-examples sub-heading">Show me the scope</h4>
-          <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
-          <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
+        <p class="long-copy">That's it! You can see a live version of this example.</p>
+        <div class="codepen-wrapper">
+          <p data-height="550" data-theme-id="light" data-slug-hash="yjYZzm" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Box of colours - Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/yjYZzm/">Box of colours - Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        </div>
+        <h4 class="main-detailed-examples sub-heading">Show me the scope</h4>
+        <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
+        <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
 
-          <p class="long-copy">In this example we will show how to scope a component with Viewloader 😉 </p>
-          <p class="long-copy">We have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
+        <p class="long-copy">In this example we will show how to scope a component with Viewloader</p>
+        <p class="long-copy">We have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
 
-          <p class="list-copy">Let's create a simple Viewloader component that changes the border color of our boxes.</p>
+        <p class="list-copy">Let's create a simple Viewloader component that changes the border color of our boxes.</p>
 
-          <pre><code class="language-html">&lt;script&gt;
+        <pre><code class="language-html">&lt;script&gt;
   import viewloader from "viewloader";
 
   const views = {
@@ -294,33 +283,26 @@ viewloader.execute(views);
         <p class="long-copy">We select an element to be the starting point of our scope and pass it as the second argument
           to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
         <p class="long-copy">It's worth remembering that the false scope is the default Viewloader behavior.</p>
-
         <p class="list-copy">Last but not least, let's add the data-view attributes to set the border color.</p>
 
-        <p class="list-copy">The border that changes color depends on the scope you pass; the scope option gives you flexibility in how you use each component.</p>
-
-        <pre><code class="language-html">&lt;div class="container"&gt;
-  &lt;h2> Include scope &lt;/h2&gt;
-  &lt;div class="scope-main-box include-scope" data-view-change-border='#10BFAB'&gt;
-    &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
-  &lt;/div&gt;
+        <pre><code class="language-html">&lt;h2> Include scope &lt;/h2&gt;
+&lt;div class="main-box include-scope" data-view-change-border='#10BFAB'&gt;
+  &lt;div class="inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="container"&gt;
-  &lt;h2&gt; Exclude scope &lt;/h2&gt;
-  &lt;div class="scope-main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
-    &lt;div class="scope-inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
-  &lt;/div&gt;
+
+&lt;h2&gt; Exclude scope &lt;/h2&gt;
+&lt;div class="main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
+  &lt;div class="inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
+        <p class="long-copy">The border that changes color depends on the scope you pass; the scope option gives you flexibility in how you use each component.</p>
         <p class="long-copy">That's it! You can see a live version of this example here.</p>
         <div class="codepen-wrapper">
           <p data-height="450" data-theme-id="light" data-slug-hash="rvOoPg" data-default-tab="js,result" data-user="icelab" data-embed-version="2" data-pen-title="Scope Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/rvOoPg/">Scope Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
         </div>
-        </section>
-      </pre>
+      </section>
 
-      </div>
-    </main>
+    </div>
 
   <footer>
     <img class="footer_logo" src="./resources/img/berg-300x300.png" alt="icelab_logo">
