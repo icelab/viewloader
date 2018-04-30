@@ -111,12 +111,6 @@ body {
   text-align: justify;
 }
 
-.list-copy {
-  display: list-item;
-  list-style-position: inside;
-  list-style-type: disc;
-  margin-top: 10px;
-}
 /* Lists */
 .list-wrapper {
   line-height: 150%;
