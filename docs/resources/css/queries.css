@@ -118,6 +118,10 @@
     font-size: 200%;
   }
 
+  .last_item {
+    align-items: flex-start;
+  }
+
   /* Code */
   pre {
     font-size: 75%;
