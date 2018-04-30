@@ -110,16 +110,8 @@
     text-align: justify;
   }
 
-  .main_introduction__section__two {
-    margin-top: 20px;
-  }
-
   .icon-big {
     font-size: 200%;
-  }
-
-  .last_item {
-    align-items: flex-start;
   }
 
   /* Code */

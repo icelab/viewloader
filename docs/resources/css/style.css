@@ -193,28 +193,11 @@ body {
 }
 
 .main_introduction__section .list_item {
-  text-align: center;
+  display: flex;
   margin-right: 25px;
+  margin-bottom: 20px;
 }
 
-.list_item:last-child {
-  margin-right: 0px;
-}
-
-.main_introduction__section__one {
-  display: flex;
-}
-
-.main_introduction__section__two {
-  margin-top: 45px;
-  text-align: justify;
-}
-
-.last_item {
-  width: 90%;
-  align-items: center;
-  display: flex;
-}
 
 /* ------------------------------ */
 /*  FOOTER
