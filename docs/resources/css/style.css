@@ -108,14 +108,12 @@ body {
 /*  Paragrafs */
 .long-copy {
   margin-bottom: 10px;
-  text-align: justify;
 }
 
 /* Lists */
 .list-wrapper {
   line-height: 150%;
   margin: 0 auto;
-  text-align: justify;
   width: 90%;
 }
 
@@ -149,9 +147,9 @@ body {
 }
 
 .main-header__logo-til {
+  color: #fff;
   font-size: 120%;
   font-weight: 700;
-  color: #fff;
   margin-left: 5px;
   text-decoration: none;
 }
@@ -185,16 +183,15 @@ body {
 /* ------------------------------ */
 
 .icon-big {
-  margin-right: 15px;
-  font-style: normal;
   font-size: 250%;
-  display: block;
+  font-style: normal;
+  margin-right: 15px;
   text-align: center;
 }
 
 .main_introduction__section .list_item {
+  align-items: center;
   display: flex;
-  margin-right: 25px;
   margin-bottom: 20px;
 }
 

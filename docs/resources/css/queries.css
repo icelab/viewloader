@@ -12,8 +12,6 @@
 
   /* Reausable */
   .wrapper {
-    max-width: calc(800px - (30px));
-    max-width: -webkit-calc(800px - (30px));
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -28,8 +26,8 @@
   body {
     font-size: 90%;
   }
-  /* header  */
 
+  /* header  */
   .main-header {
     margin-bottom: 50px;
   }
@@ -92,22 +90,14 @@
   }
 
   .wrapper {
-    max-width: -webkit-calc(800px - (30px));
-    max-width: calc(800px - (30px));
     padding-left: 15px;
     padding-right: 15px;
   }
 
   /* Sections */
 
-  .main_introduction__section__one {
-    display: block;
-  }
-
   .main_introduction__section .list_item {
-    display: flex;
-    margin-bottom: 20px;
-    text-align: justify;
+    align-items: flex-start;
   }
 
   .icon-big {
