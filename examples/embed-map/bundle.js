@@ -11,9 +11,9 @@ function initMap(el, options){
   });
 }
 
-module.exports = function embedMap(el, options) {
+module.exports = function embedMap(el, props) {
   google.maps.event.addDomListener(window, 'load', function onLoad () {
-    initMap(el, options);
+    initMap(el, props);
   });
 }
 
@@ -21,9 +21,9 @@ module.exports = function embedMap(el, options) {
 var viewLoader = require('../../index.js');
 var embedMap = require('./embed-map');
 
-var views = {};
-views.myBarChart = function(el, props) {
-  myBarChart(el, props);
+var views = {}
+views.embedMap = function(el, props) {
+  embedMap(el, props);
 };
 
 viewLoader.execute(views);
