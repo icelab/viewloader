@@ -2,7 +2,7 @@ var viewLoader = require('../../index.js');
 var embedMap = require('./embed-map');
 
 var views = {}
-views.embdMap = function(el, props) {
+views.embedMap = function(el, props) {
   embedMap(el, props);
 };
 
