@@ -1,4 +1,4 @@
-function initMap(el, options){
+function initMap(el, options) {
   const map = new google.maps.Map(el, {
     center: options.cityCoordinates,
     zoom: 12
@@ -12,7 +12,7 @@ function initMap(el, options){
 
 const views = {
   embedMap: function embedMap(el, props) {
-    google.maps.event.addDomListener(window, 'load', function onLoad () {
+    google.maps.event.addDomListener(window, "load", function onLoad() {
       initMap(el, props);
     });
   }
