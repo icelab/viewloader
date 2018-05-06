@@ -1,10 +1,10 @@
-function remove(el) {
-  el.addEventListener('click', function () {
-    el.parentNode.remove();
-  })
-}
-
 const views = {
+  remove : function remove(el) {
+    el.addEventListener('click', function () {
+      el.parentNode.remove();
+    })
+  },
+
   addToBasket: function addToBasket(el, props) {
     el.addEventListener("click", function() {
       fetch(props.file)
@@ -15,7 +15,7 @@ const views = {
           const container = document.querySelector(`.${props.target}`);
           container.appendChild(wrapper);
 
-          viewloader.execute({ remove }, wrapper, true);
+          viewloader.execute(views, wrapper, true);
         })
         .catch((err) => console.log(err));
     });
