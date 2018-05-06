@@ -1,0 +1,25 @@
+<html>
+<style media="screen">
+  body{
+    text-align: center;
+  }
+  button {
+    font-size: 16px;
+    padding: 5px;
+  }
+</style>
+
+<body>
+  <h1>Add to Basket</h1>
+  <button class="btn-default get-text" data-view-add-to-basket='{"file":"product1.html", "target":"output"}'>Add Product</button>
+  <button class="btn-default get-text" data-view-add-to-basket='{"file":"product2.html", "target":"output"}'>Add Product</button>
+  <button class="btn-default get-text" data-view-add-to-basket='{"file":"product3.html", "target":"output"}'>Add Product</button>
+
+  <h2> My Basket </h2>
+  <div class="output"> </div>
+
+  <script src="https://unpkg.com/viewloader@1.1.5/dist/viewloader.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
