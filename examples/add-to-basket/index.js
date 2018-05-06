@@ -1,4 +1,4 @@
-const views = {
+const basketItemViews = {
   remove: function remove(el) {
     el.addEventListener("click", function() {
       el.parentNode.remove();
@@ -22,4 +22,4 @@ const views = {
   }
 };
 
-viewloader.execute(views);
+viewloader.execute(basketItemViews);
