@@ -5,7 +5,16 @@
     body{
       text-align: center;
     }
+    .container {
+      display: flex;
+      justify-content: center
+    }
+    .product {
+      margin-left: 20px;
+    }
     button {
+      display: block;
+      margin: 15px auto;
       font-size: 16px;
       padding: 5px 15px;
     }
@@ -13,10 +22,20 @@
 </head>
 <body>
   <h1>Add to Basket</h1>
-  <button data-view-add-to-basket='{"file":"product1.html", "target":"output"}'>Add Product</button>
-  <button data-view-add-to-basket='{"file":"product2.html", "target":"output"}'>Add Product</button>
-  <button data-view-add-to-basket='{"file":"product3.html", "target":"output"}'>Add Product</button>
-
+  <div class="container">
+    <div class="product">
+      <img src="./imgs/book1.jpg" alt="Harry Potter and Sorcerer's Stone cover">
+      <button data-view-add-to-basket='{"file":"product1.html", "target":"output"}'>Add Book</button>
+    </div>
+    <div class="product">
+      <img src="./imgs/book2.jpg" alt="Harry Potter and Chamber of secrets cover">
+      <button data-view-add-to-basket='{"file":"product2.html", "target":"output"}'>Add Book</button>
+    </div>
+    <div class="product">
+      <img src="./imgs/book3.jpg" alt="Harry Potter and Prisoner of Azkaban cover">
+      <button data-view-add-to-basket='{"file":"product3.html", "target":"output"}'>Add Book</button>
+    </div>
+  </div>
   <h2> My Basket </h2>
   <div class="output"> </div>
 
