@@ -6,16 +6,16 @@ const basketItemViews = {
   },
 
   addToBasket: function addToBasket(el, props) {
+    const container = document.querySelector(`.${props.target}`);
+
     el.addEventListener("click", function() {
       fetch(props.file)
         .then(res => res.text())
         .then(data => {
           const wrapper = document.createElement("div");
           wrapper.innerHTML = data;
-          const container = document.querySelector(`.${props.target}`);
           container.appendChild(wrapper);
-
-          viewloader.execute(views, wrapper, true);
+          viewloader.execute(basketItemViews, wrapper, true);
         })
         .catch(err => console.log(err));
     });
