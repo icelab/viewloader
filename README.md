@@ -16,11 +16,11 @@ A tiny DOM bootstrapper.
 ```js
 // bar-chart.js
 
-module.exports = function myBarChart (el, props) {
+export default function myBarChart (el, props) {
   console.log(el, props); //=> div {data: [1,2,3]}
   return {
-    reset: function() { ... },
-    destroy: function() { ... }
+    reset: () => { ... },
+    destroy: () => { ... }
   }
 };
 ```
@@ -28,22 +28,17 @@ module.exports = function myBarChart (el, props) {
 ```js
 // index.js
 
-var viewloader = require('viewloader');
-var myBarChart = require('./bar-chart');
-var myLineChart = require('./line-chart');
+import viewloader from "viewloader";
+import myBarChart from "./bar-chart";
+import myLineChart from "./line-chart";
 
-var views = {};
-
-views.myBarChart = function(el, props) {
-  return myBarChart(el, props);
-};
-
-views.myLineChart = function(el, props) {
-  return myLineChart(el, props);
+const views = {
+  myBarChart,
+  myLineChart
 };
 
 // Create the instance
-var manager = viewloader(views);
+const manager = viewloader(views);
 // Call the view functions
 manager.callViews();
 // Call the `reset` methods of each view function
@@ -56,8 +51,26 @@ manager.resetViews();
 
 ## API
 
-### viewloader(views, scope, includeScope);
+```
+viewloader(views, scope, includeScope);
+```
 
-  * **views**: An `object` of view functions mapped to `data-view-[name]` attributes. (Required)
-  * **scope**: An `element` or `nodelist` to scope the view loader to. (Optional. Defaults to `document`)
-  * **includeScope**: A `boolean` to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to `false`)
+  * **views** — An `object` of view functions mapped to `data-view-[name]` attributes. (Required)
+  * **scope** — An `element` or `nodelist` to scope the view loader to. (Optional. Defaults to `document`)
+  * **includeScope** — A `boolean` to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to `false`)
+
+## Promises
+
+Viewloader supports view functions that return a `Promise`, automatically setting the resolved return value from any promises once that value is resolved. This means you can call viewloader synchronously with underlying code in your views that is asynchronous:
+
+```js
+import viewloader from "viewloader";
+
+const views = {
+  asyncView: (el, props) => {
+    return import("./async-import")
+      .then((asyncImport) => {
+        return asyncImport(el, props);
+      });
+  }
+}
