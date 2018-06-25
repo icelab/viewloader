@@ -86,9 +86,10 @@
       el.value = "Hello, World!";
     }
   }
+  // Set up the manager
+  var manager = viewloader(views);
   // Call viewloader with our "views" object whenever the DOM is ready
-  viewloader.execute(views);
-
+  manager.callViews();
 &lt;/script&gt;</code></pre>
 
         <h4 class="main_introduction sub-heading">This simple approach:</h4>
@@ -138,8 +139,8 @@
     }
   }
 
-  viewloader.execute(views);
-
+  var manager = viewloader(views);
+  manager.callViews();
 &lt;/script&gt;</code></pre>
 
         <p class="long-copy">And for additional ✨ it parses JSON-encoded values from that attribute into a proper object for you: </p>
@@ -156,8 +157,8 @@
     }
   }
 
-  viewloader.execute(views);
-
+  var manager = viewloader(views);
+  manager.callViews();
 &lt;/script&gt;</code></pre>
 
         <p class="long-copy">This gives you the power to create reusable components that can be "called" from your HTML with their own properties.</p>
@@ -189,13 +190,29 @@
         <div class="main-api__section heading-margin">
           <h2 class="main_api__section heading-title">API<h2>
         </div>
-        <h4 class="main-api sub-heading">viewloader.execute(views, scope, includeScope)</h4>
+        <h4 class="main-api sub-heading">Initialisation</h4>
         <div class="main-api__list list-wrapper">
+          <pre><code class="language-js">var manager = viewloader(views, scope, includeScope);</code></pre>
           <ul>
-            <li><strong>views:</strong> An object of view functions mapped to data-view-[name] attributes. (Required)</li>
-            <li><strong>scope:</strong> An element or nodelist to scope the view loader to. (Optional. Defaults to document)</li>
-            <li><strong>includeScope:</strong> A boolean to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to false)</li>
+            <li><strong>views</strong> — An object of view functions mapped to data-view-[name] attributes. (Required)</li>
+            <li><strong>scope</strong> — An element or nodelist to scope the view loader to. (Optional. Defaults to document)</li>
+            <li><strong>includeScope</strong> — A boolean to indicate if the scoped element should be included in the scoped views. (Optional: Defaults to false)</li>
           </ul>
+        </div>
+        <h4 class="main-api sub-heading">Calling views</h4>
+        <div class="main-api__list list-wrapper">
+          <p>You can call the views for an initialised instance:</p>
+          <pre><code class="language-js">manager.callViews();</code></pre>
+        </div>
+        <h4 class="main-api sub-heading">Resetting views</h4>
+        <div class="main-api__list list-wrapper">
+          <p>Call the reset functions for an instances called views:</p>
+          <pre><code class="language-js">manager.resetViews();</code></pre>
+        </div>
+        <h4 class="main-api sub-heading">Destroying views</h4>
+        <div class="main-api__list list-wrapper">
+          <p>Call the destroy functions for an instances called views:</p>
+          <pre><code class="language-js">manager.destroyViews();</code></pre>
         </div>
       </section>
 
@@ -225,8 +242,8 @@
     }
   };
 
-  viewloader.execute(views);
-
+  var manager = viewloader(views);
+  manager.callViews();
 &lt;/script&gt;</code></pre>
 
         <p class="long-copy"> Finally we bind the component to the DOM nodes, by adding the data-view attributes with the various colors.</p>
@@ -243,8 +260,8 @@
           <p data-height="550" data-theme-id="light" data-slug-hash="yjYZzm" data-default-tab="result" data-user="icelab" data-embed-version="2" data-pen-title="Box of colours - Viewloader" class="codepen">See the Pen <a href="https://codepen.io/icelab/pen/yjYZzm/">Box of colours - Viewloader</a> by icelab (<a href="https://codepen.io/icelab">@icelab</a>) on <a href="https://codepen.io">CodePen</a>.</p>
         </div>
         <h4 class="main-detailed-examples sub-heading">Show me the scope</h4>
-        <p class="long-copy">Viewloader execution can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
-        <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the Viewloader execution.</p>
+        <p class="long-copy">Viewloader can be scoped to specific elements, allowing it to be used only in specific parts of the template or to be applied only to new DOM elements.</p>
+        <p class="long-copy">You can pass in a boolean flag as the third parameter to indicate if the scope gets included or not in the set of executed views.</p>
 
         <p class="long-copy">In this example we will show how to scope a component with Viewloader</p>
         <p class="long-copy">We have two boxes, a "main" box and an inner box. The inner box represents the "target" element.</p>
@@ -269,22 +286,23 @@
   var includeScope = document.querySelector(".include-scope");
   var excludeScope = document.querySelector(".exclude-scope");
 
-  viewloader.execute(views, includeScope, true);
-  viewloader.execute(views, excludeScope, false);
-
+  var includeScopeManager = viewloader(views, includeScope, true);
+  includeScopeManager.callViews();
+  var excludeScopeManager = viewloader(views, excludeScope, true);
+  excludeScopeManager.callViews();
 &lt;/script&gt;</code></pre>
 
         <p class="long-copy">We select an element to be the starting point of our scope and pass it as the second argument
-          to the Viewloader execute function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
+          to the `viewloader` function. The third argument is a boolean indicating if the element is included in the scope or not.</p>
         <p class="long-copy">It's worth remembering that the false scope is the default Viewloader behavior.</p>
         <p class="long-copy">Last but not least, let's add the data-view attributes to set the border color.</p>
 
-        <pre><code class="language-html">&lt;h2> Include scope &lt;/h2&gt;
+        <pre><code class="language-html">&lt;h2>Include scope&lt;/h2&gt;
 &lt;div class="main-box include-scope" data-view-change-border='#10BFAB'&gt;
   &lt;div class="inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2&gt; Exclude scope &lt;/h2&gt;
+&lt;h2&gt;Exclude scope&lt;/h2&gt;
 &lt;div class="main-box exclude-scope" data-view-change-border='#10BFAB'&gt;
   &lt;div class="inner-box" data-view-change-border='#D4AE89'>&lt;/div&gt;
 &lt;/div&gt;</code></pre>

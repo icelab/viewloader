@@ -1,14 +1,17 @@
 # viewloader
 
-A tiny DOM bootstrapper.
+A teensy package that simplifies the process of binding DOM nodes to JavaScript functions. It does this by creating a convention for mapping between the DOM and your JavaScript and ensures that only the functions for the components in the DOM are executed.
 
 ## Installation
+
 ```
 % npm install --save viewloader
 ```
 
 ## Development
+
 To build a standalone version:
+
 ```
 % npm run build
 ```
