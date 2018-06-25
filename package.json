@@ -1,7 +1,7 @@
 {
   "name": "viewloader",
-  "description": "A tiny DOM bootstrapper",
-  "version": "1.1.5",
+  "description": "Simplifying the process of binding DOM nodes to JavaScript functions",
+  "version": "2.0.0",
   "main": "index.js",
   "files": [
     "index.js",
