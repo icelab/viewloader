@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v2.0.1 2019-09-16
+
+* Allow exclusions from reset/destroy functions
+
 ## v2.0.0 2018-06-25
 
 * Breaking: Change API for initialisation so that views can be "managed" after they’re called.
