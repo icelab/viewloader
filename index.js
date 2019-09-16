@@ -105,7 +105,6 @@ function isWithinExcludedScope(scopes, node) {
  * possible matching nodes.
  */
 function Viewloader(views, scopeElements, includeScopeElements) {
-  this.initialized = false;
   this.initializedViews = [];
   this.setViews(views, scopeElements, includeScopeElements);
 }
@@ -124,6 +123,7 @@ Viewloader.prototype.setViews = function(
   scopeElements,
   includeScopeElements
 ) {
+  this.initialized = false;
   this.views = views;
   this.scopeElements = scopeElements;
   this.includeScopeElements = includeScopeElements || false;
