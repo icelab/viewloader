@@ -72,6 +72,30 @@ function callViewFunction(viewFunction, viewAttr, el) {
 }
 
 /**
+ * Check if a node is or is the descendent of an element
+ * @param {Element} maybeAncestor
+ * @param {Element} node
+ */
+function isOrIsDescendentOf(maybeAncestor, node) {
+  return maybeAncestor === node || maybeAncestor.contains(node);
+}
+
+/**
+ * Check if a node meets the exclusions
+ * @param {Array} scopes Array of elements
+ * @param {Element} node
+ */
+function isWithinExcludedScope(scopes, node) {
+  var excluded = false;
+  scopes.forEach(function (scope) {
+    if (isOrIsDescendentOf(scope, node)) {
+      excluded = true;
+    }
+  });
+  return excluded;
+}
+
+/**
  * Viewloader
  *
  * @param {Object} views Named key pairs for each view function
@@ -81,6 +105,7 @@ function callViewFunction(viewFunction, viewAttr, el) {
  * possible matching nodes.
  */
 function Viewloader(views, scopeElements, includeScopeElements) {
+  this.initialized = false;
   this.initializedViews = [];
   this.setViews(views, scopeElements, includeScopeElements);
 }
@@ -112,6 +137,11 @@ Viewloader.prototype.setViews = function(
  * element and any props derived from its attribute value.
  */
 Viewloader.prototype.callViews = function() {
+  // Skip if already called
+  if (this.initialized === true) {
+    return;
+  }
+  this.initialized = true;
   var _this = this;
   for (var view in this.views) {
     var dashView = dasherize(view);
@@ -139,7 +169,7 @@ Viewloader.prototype.callViews = function() {
     // for each value in `elements`, call `callViewFunction`
     this.initializedViews = this.initializedViews.concat(
       Array.prototype.map.call(elements, function(element) {
-        return callViewFunction(_this.views[view], viewAttr, element);
+        return [element, callViewFunction(_this.views[view], viewAttr, element)];
       })
     );
   }
@@ -147,7 +177,7 @@ Viewloader.prototype.callViews = function() {
   this.initializedViews.forEach(function(returnValue, i) {
     if (returnValue && returnValue.then) {
       returnValue.then(function(r) {
-        _this.initializedViews[i] = r;
+        _this.initializedViews[i][1] = r;
       });
     }
   });
@@ -158,12 +188,20 @@ Viewloader.prototype.callViews = function() {
  *
  * Call `.reset` method for any initialised views
  */
-Viewloader.prototype.resetViews = function() {
-  this.initializedViews.forEach(function(view) {
-    if (view != null && view.reset) {
-      view.reset();
+Viewloader.prototype.resetViews = function(excludedScopes) {
+  excludedScopes = excludedScopes || [];
+  this.initializedViews = this.initializedViews.filter(function(view) {
+    var viewElement = view[0];
+    var excluded = isWithinExcludedScope(excludedScopes, viewElement);
+    var viewValue = view[1];
+    if (!excluded && (viewValue != null && viewValue.reset)) {
+      viewValue.reset();
+      return false;
     }
+    return true;
   });
+  var complete = this.initializedViews.length === 0;
+  return complete;
 };
 
 /**
@@ -171,13 +209,20 @@ Viewloader.prototype.resetViews = function() {
  *
  * Call `.destroy` method for any initialised views
  */
-Viewloader.prototype.destroyViews = function() {
-  this.initializedViews.forEach(function(view) {
-    if (view != null && view.destroy) {
-      view.destroy();
+Viewloader.prototype.destroyViews = function(excludedScopes) {
+  excludedScopes = excludedScopes || [];
+  this.initializedViews = this.initializedViews.filter(function(view) {
+    var viewElement = view[0];
+    var excluded = isWithinExcludedScope(excludedScopes, viewElement);
+    var viewValue = view[1];
+    if (!excluded && (viewValue != null && viewValue.destroy)) {
+      viewValue.destroy();
+      return false;
     }
+    return true;
   });
-  this.initializedViews = [];
+  var complete = this.initializedViews.length === 0;
+  return complete;
 };
 
 /**
